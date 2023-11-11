@@ -1,0 +1,34 @@
+<!-- Proba  -->
+<h1 align="center" class="display-4 mb-5">Porudzbine</h1>
+
+<table class="table table-striped text-center">
+    <thead>
+    <tr>
+        <th scope="col">Broj porudzbine #</th>
+        <th scope="col">Vreme porudzbine</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let order of page?.content">
+        <th class="align-middle" scope="row">
+            {{order.orderId}}
+        </th>
+        <td class="align-middle">{{order.createTime | date:'dd/MM/yyyy HH:mm'}}</td>
+        <td class="align-middle" [ngClass]="{ 'new': OrderStatus[order.orderStatus] === 'Ceka_potvrdu',
+         'finished': OrderStatus[order.orderStatus] === 'Potvrdjeno',
+          'canceled': OrderStatus[order.orderStatus] === 'Odbijeno' }">{{OrderStatus[order.orderStatus]}}</td>
+        <td class="align-middle">
+            <a *ngIf="!(currentUser.role == Role.Customer && currentUser.name == order.buyerEmail)"
+               style="display:
+            block" href="" routerLink="/order/{{order.orderId}}">
+                Prikazi</a>
+            
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<app-pagination [currentPage]="page"></app-pagination>

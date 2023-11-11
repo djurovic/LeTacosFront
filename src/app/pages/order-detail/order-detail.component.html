@@ -1,0 +1,142 @@
+<h1 align="center" class="display-4 mb-1">Broj porudzbine #{{(order$ | async)?.orderId}}</h1>
+<!-- Informacije o korisniku -->
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div style="width: 707.25px; height: 858px; border-radius: 20px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex;">
+
+      <div style="align-self: stretch; height: 686.25px; transform: rotate(90deg); transform-origin: 0 0; background: #D7D5D5"></div>
+      <div style="padding: 32px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+        <div style="align-self: stretch; height: 39px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+          <div style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">Informacije korisnika</div>
+          <div style="align-self: stretch; height: 0px; border: 1px #575757 dotted"></div>
+        </div>
+        <div style="align-self: stretch; height: 72px; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; display: flex">
+          <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Ime</div>
+          <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerName}}</div>
+        </div>
+        <div style="align-self: stretch; height: 72px; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; display: flex">
+          <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Prezime</div>
+          <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerSurname}}</div>
+        </div>
+        <div style="align-self: stretch; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+          <div style="flex: 1 1 0; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; display: inline-flex">
+            <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Ulica</div>
+            <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerUlica}}</div>
+          </div>
+          <div style="width: 100px; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; display: inline-flex">
+            <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 30px; word-wrap: break-word">Br.</div>
+            <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerBroj}}</div>
+          </div>
+        </div>
+        <div style="width: 643.25px; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+          <div style="flex: 1 1 0; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
+            <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Interfon</div>
+            <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerInterfon}}</div>
+          </div>
+          <div style="width: 100px; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
+            <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 30px; word-wrap: break-word">Br. Stana</div>
+            <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerBrojStana}}</div>
+          </div>
+          <div style="width: 100px; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 4px; display: inline-flex">
+            <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 500; line-height: 30px; word-wrap: break-word">Sprat</div>
+            <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerSprat}}</div>
+          </div>
+        </div>
+        <div style="align-self: stretch; height: 72px; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; display: flex">
+          <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Telefon</div>
+          <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerPhone}}</div>
+        </div>
+        <div style="align-self: stretch; height: 72px; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; display: flex">
+          <div style="text-align: center; color: #575757; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Email</div>
+          <div style="text-align: center; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">{{(order$ | async)?.buyerEmail}}</div>
+        </div>                
+    </div>
+  </div>
+</div>
+
+<!-- Order detail proba -->
+<div class="row" style="margin-left: 2%;">
+    <div *ngFor="let productInOrder of (order$ | async)?.products" class="card" style="width: 20rem; margin-right: 5%;">
+        <img class="card-img-top" src="{{productInOrder.productIcon}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">{{productInOrder.productName}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <!-- Meso -->
+          <li class="list-group-item" *ngIf="productInOrder.mariniranaPiletina>0">Marinirana piletina <span *ngIf="productInOrder.mariniranaPiletina>1">{{productInOrder.mariniranaPiletina}}</span></li>
+          <li class="list-group-item" *ngIf="productInOrder.mlevenaJunetina>0">Mlevena junetina <span *ngIf="productInOrder.mlevenaJunetina>1"></span>{{productInOrder.mlevenaJunetina}}</li>
+          <li class="list-group-item" *ngIf="productInOrder.rostiljKobasica>0">Rostilj kobasica <span *ngIf="productInOrder.rostiljKobasica>1"></span>{{productInOrder.rostiljKobasica}}</li>
+          <li class="list-group-item" *ngIf="productInOrder.chickenNugets>0">Chicken nuggets <span *ngIf="productInOrder.chickenNugets>1"></span>{{productInOrder.chickenNugets}}</li>
+          <li class="list-group-item" *ngIf="productInOrder.cordonBleu>0">Cordon bleu <span *ngIf="productInOrder.cordonBleu1"></span>{{productInOrder.cordonBleu}}</li>
+          <li class="list-group-item" *ngIf="productInOrder.falafel>0">Falafel <span *ngIf="productInOrder.falafel>1"></span>{{productInOrder.falafel}}</li>
+          <!-- Besplatni sos -->
+          <li class="list-group-item" *ngIf="productInOrder.besplatniSos.length>0">Besplatni sos: {{productInOrder.besplatniSos}}</li>
+          <!-- Extra sos -->
+          <li class="list-group-item" *ngIf="productInOrder.kecap==true">Extra sos: Kecap(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.majonez==true">Extra sos: Majonez(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.sahara==true">Extra sos: Sahara(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.seville==true">Extra sos: Seville(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.texasBbq==true">Extra sos: Texax Barbecue(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.ninjaBlend==true">Extra sos: Ninja blend(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.kari==true">Extra sos: Kari(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.siracha==true">Extra sos: Siracha(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.barbecue==true">Extra sos: Barbecue(+80din)</li>
+          <!-- Extra dodaci -->
+          <li class="list-group-item" *ngIf="productInOrder.tostSir==true">Extra dodatak: Tost sir(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.cedar==true">Extra dodatak: Cedar(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.gauda==true">Extra dodatak: Gauda(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.zdenka==true">Extra dodatak: Zdenka(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.gorgonzola==true">Extra dodatak: Gorgonzola(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.slanina==true">Extra dodatak: Slanina(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.jalapeno==true">Extra dodatak: Jalapeno(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.hrskaviLuk==true">Extra dodatak: Hrskavi luk(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.sampinjoni==true">Extra dodatak: Sampinjoni(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.guacamole==true">Extra dodatak: Guacamole(+100din)</li>
+          <!-- Poseban zahtev -->
+          <li class="list-group-item" *ngIf="productInOrder.posebanZahtev.length>0">Poseban zahtev: {{productInOrder.posebanZahtev}}</li>
+    
+        </ul>
+        <div class="card-body">
+            <p class="card-text">Subtotal: {{productInOrder.subTotal}}</p>
+            <p class="card-text">Kolicina: {{productInOrder.count}}</p>            
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <h3 style="display: block;margin-left: 2%;" >Ukupno: {{(order$ | async)?.orderAmount}} RSD</h3>
+<!-- proba 2 nije to sad toliko bitno -->
+    
+
+
+
+ 
+    <!-- <a style="display: block" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New' " (click)="cancel(order$)" routerLink="/order">Cancel</a>
+    <span [ngClass]="{'disabled-link': !vreme}">
+      <a style="display: block" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New'" (click)="finish(order$)" routerLink="/order">Finish</a>
+    </span> -->
+    
+    
+    <label *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'Ceka_potvrdu'" for="vreme" style="font-size: 16px; margin-left: 2%; font-family: Arvo; font-weight: 700; color: #ED6F24; word-wrap: break-word; margin-bottom: 10px;">Izaberi vreme:</label>
+    <select *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'Ceka_potvrdu'" id="vreme" [(ngModel)]="vreme" name="vreme" style="display: inline-flex; align-items: center; text-decoration: none; cursor: pointer;  color: #000000; padding: 14px 24px; border: 1px #ED6F24 solid; border-radius: 5px;">
+      <option value="10 minuta">10 minuta</option>
+      <option value="15 minuta">15 minuta</option>
+      <option value="20 minuta">20 minuta</option>
+      <option value="25 minuta">25 minuta</option>
+      <option value="30 minuta">30 minuta</option>
+      <option value="35 minuta">35 minuta</option>
+      <option value="40 minuta">40 minuta</option>
+      <option value="45 minuta">45 minuta</option>
+    </select>
+    
+
+  
+
+  <span [ngClass]="{'disabled-link': !vreme}">
+    <a style="display: inline-flex; align-items: center; text-decoration: none; cursor: pointer; background-color: #FFF0E1; color: #ED6F24; padding: 14px 24px; border: 1px #ED6F24 solid; border-radius: 5px;" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New'" (click)="finish(order$)" routerLink="/order">Potvrdi porudžbinu</a>
+  </span>
+  
+
+  
+  <a style="display: inline-flex; align-items: center; margin-left: 2%; text-decoration: none; cursor: pointer; background-color: #ED2424; color: white; padding: 14px 24px; border: 1px #ED2424 solid; border-radius: 5px;" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New'" (click)="cancel(order$)" routerLink="/order">Odbi porudžbinu</a>
+
+  
+<br><br><br>

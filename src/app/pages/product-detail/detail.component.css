@@ -1,0 +1,36 @@
+.round-checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 2px solid #ED6F24; /* Add your desired border color */
+    background-color: #FFF2EC; /* Add your desired background color */
+  }
+  
+  .round-checkbox:checked {
+    background-color: #ED6F24; /* Add your desired background color when checked */
+  }
+  
+
+  .number-input input[type="text"] {
+    border: 1px solid #ccc;
+    width: 60px; /* Adjust the width as needed */
+    text-align: center; /* Center-align the text in the input */
+  }
+
+  .decrementerIncrementer {
+    color: #ED6F24;
+    background-color: white;
+    border: 2px #ED6F24 solid;
+  }
+
+  input {
+    width: 40px;
+    text-align: center;
+  }
+
+ 
+

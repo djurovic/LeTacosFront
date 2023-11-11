@@ -1,0 +1,67 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+  </style>
+
+<br><br>
+<h1 align="center" class="display-4 mb-5" style="font-family: Arvo;">Uloguj se</h1>
+<div style="width:30%; margin: 25px auto">
+
+    <div class="alert alert-danger" *ngIf="isInvalid" style="font-family: Arvo;">
+        Pogrena email adresa ili sifra.
+    </div>
+    <div class="alert alert-info" *ngIf="isLogout" style="font-family: Arvo;">
+        Izlogovali ste se.
+    </div>
+
+
+    <form #form='ngForm' (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Email adresa</label>
+            <input type="text" class="form-control form-control-lg" id="email" name="email" placeholder="Email adresa"
+                   required autofocus [(ngModel)]="model.username" #email="ngModel" autocomplete="email" >
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Potrebna je email adresa 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Sifra</label>
+            <input type="password" class="form-control form-control-lg" id="password" name="password"  autocomplete="password"
+                   placeholder="Sifra" required [(ngModel)]="model.password" #password='ngModel'>
+            <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+                Potrebna je sifra
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <input type="checkbox" id="remember_me" name="remember-me" [(ngModel)]="model.remembered">
+                <label for="remember_me" class="inline" style="font-family: Arvo; margin-left: 10px;">Zapamti me</label>
+                <a class="float-right" routerLink="/register" style="font-family: Arvo;">Registruj se!</a>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button [disabled]="!form.form.valid" type="submit" class="btn btn-lg btn-primary btn-block">Uloguj se</button>
+        </div>
+    </form>
+
+
+
+    <strong>Sample Users</strong>
+    <table style="width: 100%;" id="sampleLoginTable">
+        <tr>
+            <td><a
+                    (click)="fillLoginFields('customer1@email.com','123')"
+                    href="javascript:void(0)">customer1</a></td>
+            <td><a
+                    (click)="fillLoginFields('employee1@email.com','123')"
+                    href="javascript:void(0)">employee1</a></td>
+            <td><a
+                    (click)="fillLoginFields('manager1@email.com','123')"
+                    href="javascript:void(0)">manager1</a></td>
+        </tr>
+    </table>
+
+</div>

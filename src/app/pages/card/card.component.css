@@ -1,0 +1,10 @@
+a {
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+}
+
+#sel:hover {
+    border: 1px #ED6F24 solid; border-radius: 10px; overflow: hidden;
+}

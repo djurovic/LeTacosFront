@@ -1,0 +1,11 @@
+.new {
+    color: orange;
+  }
+  
+  .finished {
+    color: green;
+  }
+  
+  .canceled {
+    color: red;
+  }

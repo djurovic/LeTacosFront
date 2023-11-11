@@ -1,0 +1,118 @@
+<h1 align="center" class="display-4 mb-5">Edit Profiles</h1>
+<div style="width:40%; margin: 25px auto" >
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label><b>Email adresa</b></label>
+        <input readonly [value]=user?.email type="email" class="form-control form-control-lg " disabled id="email"
+               name="email" placeholder="Unesite email">
+    </div>
+    <div class="form-group">
+      <label><b>Ime</b></label>
+      <input [(ngModel)]="user.name" type="text" class="form-control form-control-lg" id="name" name="name"
+        placeholder="Vase ime" required #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty ||name.touched)">
+        <div *ngIf="name.errors.required">
+          Potrebno je ime.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Ime mora imati vise od 3 karaktera
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label><b>Prezime</b></label>
+      <input [(ngModel)]="user.surname" type="text" class="form-control form-control-lg" id="surname" name="surname"
+        placeholder="Vase prezime" required #surname="ngModel">
+      <div *ngIf="surname.invalid && (surname.dirty ||surname.touched)">
+        <div *ngIf="surname.errors.required">
+          Potrebno je prezime.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Prezime mora imati vise od 3 karaktera
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label><b>Sifra</b></label>
+      <input [(ngModel)]="user.password" type="password" class="form-control form-control-lg" id="password"
+        name="password" placeholder="Sifra" minlength="3" required #password="ngModel">
+      <div *ngIf="password.invalid && (password.dirty ||password.touched)">
+        <div *ngIf="password.errors.required">
+          Potrebna je sifra.
+        </div>
+        <div *ngIf="password.errors.minlength">
+          Sifra mora imati bar tri karaktera.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label><b>Broj telefona</b></label>
+      <input [(ngModel)]="user.phone" type="text" class="form-control form-control-lg" id="phone" name="phone"
+        placeholder="Broj telefona" required #phone="ngModel">
+      <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)">
+        <div *ngIf="phone.errors.required">
+          Potreban je broj telefona
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><b>Ulica</b></label>
+      <input [(ngModel)]="user.ulica" type="text" class="form-control form-control-lg" id="ulica" name="ulica"
+        placeholder="Ulica" required #ulica="ngModel">
+      <div *ngIf="ulica.invalid && (ulica.dirty ||ulica.touched)">
+        <div *ngIf="ulica.errors.required">
+          Potrebana je ulica
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><b>Broj</b></label>
+      <input [(ngModel)]="user.broj" type="text" class="form-control form-control-lg" id="broj" name="broj"
+        placeholder="Broj" required #broj="ngModel">
+      <div *ngIf="broj.invalid && (broj.dirty ||broj.touched)">
+        <div *ngIf="broj.errors.required">
+          Potreban je broj u ulici
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><b>Interfon</b></label>
+      <input [(ngModel)]="user.interfon" type="text" class="form-control form-control-lg" id="interfon" name="interfon"
+        placeholder="Interfon" required #interfon="ngModel">
+      <div *ngIf="interfon.invalid && (interfon.dirty ||interfon.touched)">
+        <div *ngIf="interfon.errors.required">
+          Potreban je interfon
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><b>Broj stana</b></label>
+      <input [(ngModel)]="user.brojStana" type="text" class="form-control form-control-lg" id="brojStana" name="brojStana"
+        placeholder="Broj stana" required #brojStana="ngModel">
+      <div *ngIf="brojStana.invalid && (brojStana.dirty ||brojStana.touched)">
+        <div *ngIf="brojStana.errors.required">
+          Potreban je broj stana
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label><b>Sprat</b></label>
+      <input [(ngModel)]="user.sprat" type="text" class="form-control form-control-lg" id="sprat" name="sprat"
+        placeholder="Sprat" required #sprat="ngModel">
+      <div *ngIf="sprat.invalid && (sprat.dirty ||sprat.touched)">
+        <div *ngIf="sprat.errors.required">
+          Potreban je sprat
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!form.form.valid" >Izmeni</button>
+    </div>
+  </form>
+</div>
+
