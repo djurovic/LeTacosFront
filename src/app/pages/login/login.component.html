@@ -1,11 +1,12 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
   </style>
 
 <br><br>
 <h1 align="center" class="display-4 mb-5" style="font-family: Arvo;">Uloguj se</h1>
-<div style="width:30%; margin: 25px auto">
+<div class="formDiv">
 
     <div class="alert alert-danger" *ngIf="isInvalid" style="font-family: Arvo;">
         Pogrena email adresa ili sifra.
@@ -46,22 +47,4 @@
             <button [disabled]="!form.form.valid" type="submit" class="btn btn-lg btn-primary btn-block">Uloguj se</button>
         </div>
     </form>
-
-
-
-    <strong>Sample Users</strong>
-    <table style="width: 100%;" id="sampleLoginTable">
-        <tr>
-            <td><a
-                    (click)="fillLoginFields('customer1@email.com','123')"
-                    href="javascript:void(0)">customer1</a></td>
-            <td><a
-                    (click)="fillLoginFields('employee1@email.com','123')"
-                    href="javascript:void(0)">employee1</a></td>
-            <td><a
-                    (click)="fillLoginFields('manager1@email.com','123')"
-                    href="javascript:void(0)">manager1</a></td>
-        </tr>
-    </table>
-
 </div>

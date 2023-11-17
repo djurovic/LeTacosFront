@@ -1,66 +1,62 @@
 <br><br>
-<div
-  style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex"
+<div class="detailDivProductName"  
   *ngIf="productInfo.categoryType!=0">
-  <div
-    style="text-align: center; color: #262626; font-size: 48px; font-family: Arvo; font-weight: 700; line-height: 72px; word-wrap: break-word">
+  <div class="detailDivProductNameStyle">
     {{productInfo?.productName}}</div>
-  <div style="width: 90px; height: 6px; background: #ED6F24"></div>
+  <div class="detailDivProductNameLinija"></div>
 </div>
 <br><br>
 <div class="row text-center justify-content-center">
   <div class="col-sm-10 ">
-    <div class="card mb-4 " >
-      <div class="card mb-4 mx-auto" style="width: 603px; margin-top: 5%;" *ngIf="productInfo.categoryType!=0">
-        <img style="height: 10rm" class="card-img-top" src="{{productInfo?.productIcon}}"
-        *ngIf="productInfo.categoryType!=0">
+    <div class="card mb-4 ">
+
+      <!-- Kartica ukoliko nije takos -->
+      <div class="card mb-4 mx-auto karticaGlavniDiv" *ngIf="productInfo.categoryType!=0">
+        <img class="card-img-top karticaSlika" src="{{productInfo?.productIcon}}"
+          *ngIf="productInfo.categoryType!=0">
         <div class="row">
           <div class="col-md-6">
-            <div style="color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word;text-align: left; margin: 5%;">
+            <div class="karticaIme">
               {{productInfo.productName}}
             </div>
           </div>
           <div class="col-md-6">
-            <div style="text-align: right;">
-              <div style="color: #ED6F24; font-size: 25px; font-family: Arvo; font-weight: 600; line-height: 48px; word-wrap: break-word;margin: 5%;">{{productInfo.productPrice}}<span>&nbsp;DIN</span></div>
-              
+            <div class="karticaCena">
+              <div class="karticaCenaStyle">
+                {{productInfo.productPrice}}<span>&nbsp;DIN</span>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-      
+      <!-- Kraj kartice ukoliko nije takos -->
+
+      <!-- Pocetak glavnog dela -->
       <div class="card-body">
-        <div
-          style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex"
-          *ngIf="productInfo.categoryType==0">
-          <div
-            style="text-align: center; color: #262626; font-size: 48px; font-family: Arvo; font-weight: 700; line-height: 72px; word-wrap: break-word">
-            Odaberi meso</div>
-          <div style="width: 90px; height: 6px; background: #ED6F24"></div>
+
+        <!-- Odaber meso tekst -->
+        <div class="statickiTekstDiv" *ngIf="productInfo.categoryType==0">
+          <div class="statickiTekst">
+            Odaberi meso
+          </div>
+          <div class="statickiTekstLinija"></div>
         </div>
+
+        <!-- Pocetak forme -->
         <form name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && addToCart()">
           <div class="text-left">
             <input hidden name="productId" [value]=productInfo?.productId>
             <br>
 
             <!-- Meso -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType==0">
+            <div class="pocetakReda row" *ngIf="productInfo.categoryType==0">
               <!-- Piletina -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 300px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Meso/Piletina.png');  justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Marinirana piletina</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="mesoImg" style="background-image: url('assets/Meso/Piletina.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Marinirana piletina</div>
+                    <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementPiletina()">-</button>
                       <input [(ngModel)]="mariniranaPiletina" (ngModelChange)="updateSumMesa()" type="number"
                         name="mariniranaPiletina" required min="0" max="3" readonly>
@@ -70,20 +66,12 @@
                 </div>
               </div>
               <!-- Junetina -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 300px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Meso/Junetina.png');  justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Mlevena junetina</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="mesoImg" style="background-image: url('assets/Meso/Junetina.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Mlevena junetina</div>
+                    <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementJunetina()">-</button>
                       <input [(ngModel)]="mlevenaJunetina" (ngModelChange)="updateSumMesa()" type="number"
                         name="mlevenaJunetina" required min="0" max="3" readonly>
@@ -94,20 +82,12 @@
               </div>
 
               <!-- Kobasica -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 300px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Meso/Kobasica.png');  justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Rostilj kobasica</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle" >
+                <div class="mesoImg" style="background-image: url('assets/Meso/Kobasica.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Rostilj kobasica</div>
+                    <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementKobasica()">-</button>
                       <input [(ngModel)]="rostiljKobasica" (ngModelChange)="updateSumMesa()" type="number"
                         name="rostiljKobasica" required min="0" max="3" readonly>
@@ -119,22 +99,14 @@
             </div>
             <br><br>
             <!-- Drugi red -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType==0">
+            <div class="pocetakReda row" *ngIf="productInfo.categoryType==0">
               <!-- Chicken nuggets -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 300px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Meso/Nuggets.png');  justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Chicken nuggets</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="mesoImg" style="background-image: url('assets/Meso/Nuggets.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Chicken nuggets</div>
+                    <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementNuggets()">-</button>
                       <input [(ngModel)]="chickenNugets" (ngModelChange)="updateSumMesa()" type="number"
                         name="chickenNugets" required min="0" max="3" readonly>
@@ -144,20 +116,12 @@
                 </div>
               </div>
               <!-- Cordon bleu -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 300px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Meso/Cordon.png');  justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Cordon bleu</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle" >
+              <div class="mesoImg" style="background-image: url('assets/Meso/Cordon.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Cordon bleu</div>
+                    <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementCordon()">-</button>
                       <input [(ngModel)]="cordonBleu" (ngModelChange)="updateSumMesa()" type="number" name="cordonBleu"
                         required min="0" max="3" readonly>
@@ -167,20 +131,12 @@
                 </div>
               </div>
               <!-- falafel -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 300px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Meso/Falafel.png');  justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Falafel</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="mesoImg" style="background-image: url('assets/Meso/Falafel.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Falafel</div>
+                    <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementFalafel()">-</button>
                       <input [(ngModel)]="falafel" (ngModelChange)="updateSumMesa()" type="number" name="falafel"
                         required min="0" max="3" readonly>
@@ -191,35 +147,26 @@
               </div>
             </div>
             <br>
-            <div *ngIf="productInfo.productId == 'T0001'" style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">*Odaberi meso</div>
-            <div *ngIf="productInfo.productId == 'T0002'" style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">*Odaberi 2 vrste mesa</div>
-            <div *ngIf="productInfo.productId == 'T0003'" style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">*Odaberi 3 vrste mesa</div>
+            <div *ngIf="productInfo.productId == 'T0001'" class="mesoGreska">*Odaberi meso</div>
+            <div *ngIf="productInfo.productId == 'T0002'" class="mesoGreska">*Odaberi 2 vrste mesa</div>
+            <div *ngIf="productInfo.productId == 'T0003'" class="mesoGreska">*Odaberi 3 vrste mesa</div>
             <br><br>
-
-            <!-- Besplatni sos -->
-            <div
-              style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex" *ngIf="productInfo.categoryType != 2">
-              <div
-                style="text-align: center; color: #262626; font-size: 48px; font-family: Arvo; font-weight: 700; line-height: 72px; word-wrap: break-word">
-                Sosevi</div>
-              <div style="width: 90px; height: 6px; background: #ED6F24"></div>
+            <!-- Zavrsetak mesa -->
+            <!-- Besplatni sos tekst-->
+            <div class="statickiTekstDiv"*ngIf="productInfo.categoryType != 2">
+              <div class="statickiTekst">Besplatni sos</div>
+              <div class="statickiTekstLinija"></div>
             </div>
             <br><br>
+            <!-- Besplatni sos -->
             <!-- Priv red -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2">
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/NinjaBlend.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Ninja blend</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+            <div class="pocetakReda row" *ngIf="productInfo.categoryType != 2">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/NinjaBlend.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Ninja blend</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Ninja_Blend">
                     </div>
@@ -227,19 +174,12 @@
                 </div>
               </div>
 
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/SaharaSosJPG.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Texas barbecue</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/SaharaSosJPG.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Texas barbecue</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Texas_Barbecue">
                     </div>
@@ -248,19 +188,12 @@
               </div>
 
 
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/Sahara.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Sahara</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/Sahara.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Sahara</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Sahara">
                     </div>
@@ -270,20 +203,13 @@
             </div>
             <br>
             <!-- drugi red -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2">
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/NinjaBlend.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Siracha</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+            <div class="pocetakReda row" *ngIf="productInfo.categoryType != 2">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/NinjaBlend.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Siracha</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Siracha">
                     </div>
@@ -291,19 +217,12 @@
                 </div>
               </div>
 
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/SaharaSosJPG.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Seville</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/SaharaSosJPG.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Seville</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Seville">
                     </div>
@@ -312,19 +231,12 @@
               </div>
 
 
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/Sahara.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Barbecu</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/Sahara.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Barbecue</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Barbecue">
                     </div>
@@ -335,20 +247,13 @@
             </div>
             <br>
             <!-- Treci red -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2">
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/NinjaBlend.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Kari sos</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+            <div class="pocetakReda row" *ngIf="productInfo.categoryType != 2">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/NinjaBlend.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Kari sos</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Kari">
                     </div>
@@ -356,19 +261,12 @@
                 </div>
               </div>
 
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/SaharaSosJPG.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Kecap</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/SaharaSosJPG.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Kecap</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Kecap">
                     </div>
@@ -377,19 +275,12 @@
               </div>
 
 
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/Majonez.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Majonez</div>
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/Majonez.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Majonez</div>
+                    <div class="colInfoAction">
                       <input class="round-checkbox" type="radio" [(ngModel)]="besplatniSos" name="besplatniSos"
                         value="Majonez">
                     </div>
@@ -402,35 +293,20 @@
 
 
             <!-- Ekstra sosevi -->
-            <div *ngIf="productInfo.categoryType == 0"
-              style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex">
-              <div
-                style="text-align: center; color: #262626; font-size: 48px; font-family: Arvo; font-weight: 700; line-height: 72px; word-wrap: break-word">
-                Extra sosevi</div>
-              <div style="width: 90px; height: 6px; background: #ED6F24"></div>
+            <div *ngIf="productInfo.categoryType == 0" class="statickiTekstDiv">
+              <div class="statickiTekst">Extra sosevi</div>
+              <div class="statickiTekstLinija"></div>
             </div>
             <br><br>
             <!-- Prvi red extra sosa -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+            <div class="pocetakReda row"
+              *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
               <!-- Extra sos ninja blend -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/NinjaBlend.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Ninja Blend&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/NinjaBlend.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle"><div class="colInfoNaziv">Ninja Blend&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="ninjaBlend" class="round-checkbox" type="checkbox" name="ninjaBlend"
                         (change)="calculateSubtotal()">
                     </div>
@@ -439,24 +315,12 @@
               </div>
 
               <!-- Extra sos texas bbq -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/SaharaSosJPG.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Texas Barbecue&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/SaharaSosJPG.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Texas Barbecue&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="texasBbq" class="round-checkbox" type="checkbox" name="texasBbq"
                         (change)="calculateSubtotal()">
                     </div>
@@ -465,24 +329,12 @@
               </div>
 
               <!-- Extra sos sahara -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/Sahara.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Sahara&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/Sahara.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">Sahara&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="sahara" class="round-checkbox" type="checkbox" name="sahara"
                         (change)="calculateSubtotal()">
                     </div>
@@ -492,26 +344,16 @@
             </div>
             <br>
             <!-- drugi red extra sosa -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+            <div class="pocetakReda row"
+              *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
               <!-- Extra siracha -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/SaharaSosJPG.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Siracha&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/SaharaSosJPG.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Siracha&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="siracha" class="round-checkbox" type="checkbox" name="siracha"
                         (change)="calculateSubtotal()">
                     </div>
@@ -520,24 +362,13 @@
               </div>
 
               <!-- Extra sevile -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/Sahara.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Seville&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/Sahara.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Seville&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="seville" class="round-checkbox" type="checkbox" name="seville"
                         (change)="calculateSubtotal()">
                     </div>
@@ -546,24 +377,13 @@
               </div>
 
               <!-- Extra barbecue  -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/Sahara.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Barbecue&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/Sahara.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Barbecue&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="barbecue" class="round-checkbox" type="checkbox" name="barbecue"
                         (change)="calculateSubtotal()">
                     </div>
@@ -574,26 +394,16 @@
             </div>
             <br>
             <!-- Treci red -->
-            <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+            <div class="pocetakReda row"
+              *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
               <!-- Extra kari sos -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/SaharaSosJPG.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Kari sos&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/SaharaSosJPG.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Kari sos&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="kari" class="round-checkbox" type="checkbox" name="kari"
                         (change)="calculateSubtotal()">
                     </div>
@@ -601,24 +411,13 @@
                 </div>
               </div>
               <!-- Extra kecap -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/NinjaBlend.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Kecap&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/NinjaBlend.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Kecap&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="kecap" class="round-checkbox" type="checkbox" name="kecap"
                         (change)="calculateSubtotal()">
                     </div>
@@ -627,24 +426,13 @@
               </div>
 
               <!-- Extra majonez -->
-              <div
-                style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-                <div
-                  style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/Sos/Majonez.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-
-                </div>
-                <div
-                  style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                  <div
-                    style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                    <div
-                      style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                      Majonez&nbsp;&nbsp;<span
-                        style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                        DIN</span></div>
-
-                    <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/Sos/Majonez.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Majonez&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
                       <input [(ngModel)]="majonez" class="round-checkbox" type="checkbox" name="majonez"
                         (change)="calculateSubtotal()">
                     </div>
@@ -653,320 +441,208 @@
               </div>
             </div>
             <br><br><br><br>
-            
+
             <!-- Extra dodaci -->
-            <div style="width: 100%; height: 100%; flex-direction: column; justify-content: flex-start; align-items: center; gap: 12px; display: inline-flex" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
-              <div style="text-align: center; color: #262626; font-size: 48px; font-family: Arvo; font-weight: 700; line-height: 72px; word-wrap: break-word">Extra dodaci</div>
-              <div style="width: 90px; height: 6px; background: #ED6F24"></div>
-          </div>
-          <br><br><br>
-          <!-- Prvi red -->
-          <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
-            <!-- Extra dodatak tost sir -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/TostSir.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Tost sir&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="tostSir" class="round-checkbox" type="checkbox" name="tostSir"
-                      (change)="calculateSubtotal()">
+            <div class="statickiTekstDiv" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+              <div class="statickiTekst">Extra dodaci</div>
+              <div class="statickiTekstLinija"></div>
+            </div>
+            <br><br><br>
+            <!-- Prvi red -->
+            <div class="pocetakReda row"
+              *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+              <!-- Extra dodatak tost sir -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/TostSir.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Tost sir&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="tostSir" class="round-checkbox" type="checkbox" name="tostSir"
+                        (change)="calculateSubtotal()">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- Extra dodatak cedar -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/Cedar.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Cedar&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="cedar" class="round-checkbox" type="checkbox" name="cedar"
-                      (change)="calculateSubtotal()">
+              <!-- Extra dodatak cedar -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/Cedar.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Cedar&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="cedar" class="round-checkbox" type="checkbox" name="cedar"
+                        (change)="calculateSubtotal()">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-  
-            <!-- Extra dodatak gauda -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/Gauda.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Gauda&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="gauda" class="round-checkbox" type="checkbox" name="gauda"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br><br>
-          <!-- Drugi red -->
-          <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
-            <!-- Extra dodatak zdenka  -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/Zdenka.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Zdenka&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="zdenka" class="round-checkbox" type="checkbox" name="zdenka"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Extra dodatak gorgonzola -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/Slanina.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Gorgonzola&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="gorgonzola" class="round-checkbox" type="checkbox" name="gorgonzola"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Extra dodatak slanina -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/Slanina.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Slanina&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="slanina" class="round-checkbox" type="checkbox" name="slanina"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br><br>
-          <!-- treci red -->
-          <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
-            <!-- Extra dodatak jalapeno -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/TostSir.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Jalapeno&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="jalapeno" class="round-checkbox" type="checkbox" name="jalapeno"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Extra dodatak sampinjoni -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/Sampinjoni.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Sampinjoni&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="sampinjoni" class="round-checkbox" type="checkbox" name="sampinjoni"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Extra dodatak hrskavi luk -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/HrskaviLuk.png'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Hrskavi luk&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="hrskaviLuk" class="round-checkbox" type="checkbox" name="hrskaviLuk"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br><br>
-          <!-- cetrvrti red ekstra dodaci -->
-          <div style="display: flex; justify-content: space-between;" *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
-            <!-- Extra dodatak guacamole -->
-            <div
-              style="box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); border-radius: 10px; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-              <div
-                style="width: 238.33px; height: 250px; padding-top: 24px; padding-bottom: 152px; padding-left: 429.33px; padding-right: 24px; background: linear-gradient(0deg, white 0%, white 100%); background-image: url('assets/ekstraDodaci/guac.jfif'); background-repeat: no-repeat;justify-content: flex-end; align-items: center; display: inline-flex">
-  
-              </div>
-              <div
-                style="align-self: stretch; height: 78px; padding: 24px; background: white; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: flex">
-                <div
-                  style="align-self: stretch; justify-content: space-between; align-items: flex-end; display: inline-flex">
-                  <div
-                    style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">
-                    Guacamole&nbsp;&nbsp;<span
-                      style="color: #ED6F24; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">+80
-                      DIN</span></div>
-  
-                  <div style="justify-content: flex-start; align-items: flex-end; gap: 6px; display: flex">
-  
-                    <input [(ngModel)]="guacamole" class="round-checkbox" type="checkbox" name="guacamole"
-                      (change)="calculateSubtotal()">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Kraj cetvrtog reda extra dodaci -->
-          <!-- Kraj ekstra dodaci -->
-          <br><br><br><br>
-          <div class="container">
-            <div style="color: #575757; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">Posebni zahtevi</div>
-            <textarea rows="7" cols="150" [(ngModel)]="posebanZahtev" name="posebanZahtev"></textarea>
-            <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-              <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                <label class="card-text">
-                  <strong style="font-size: 20px; font-family: Poppins;">Ukupno: </strong>
-                  <label id="subtotal" style="font-size: 20px;">{{calculateSubtotal()}}</label>
-                </label>
-                <label class="card-text" style="margin-top: 10px;">
-                  <strong style="font-size: 20px; font-family: Poppins;">Kolicina: </strong>
-                  <button type="button" class="decrementerIncrementer" (click)="decrementCount()">-</button>
-                  <input [(ngModel)]="count" (change)="validateCount()" type="number" name="count" required min="1" max="5" readonly>
-                  <button type="button" class="decrementerIncrementer" (click)="incrementCount()">+</button>
-                </label>
-              </div>
-              <div style="display: flex; flex-direction: column; align-items: flex-end; margin-top: 5%;">
-                <button type="submit" [disabled]="!form.form.valid || checkMeat()" *ngIf="productInfo?.productStatus == 0; else offBlock" style="font-family: Arvo; color: #ED6F24; background-color: #FFF0E1; border: #FFF0E1;" class="btn btn-primary btn-lg">Dodaj u korpu</button>
-                <div *ngIf="checkMeat()" style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">*Odaberi meso</div>
-              </div>
-             </div>          
-          </div>
 
+              <!-- Extra dodatak gauda -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/Gauda.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Gauda&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="gauda" class="round-checkbox" type="checkbox" name="gauda"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br><br>
+            <!-- Drugi red -->
+            <div class="pocetakReda row"
+              *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+              <!-- Extra dodatak zdenka  -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/Zdenka.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Zdenka&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="zdenka" class="round-checkbox" type="checkbox" name="zdenka"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Extra dodatak gorgonzola -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/Gorgonzola.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Gorgonzola&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="gorgonzola" class="round-checkbox" type="checkbox" name="gorgonzola"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            
-           
-          <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>
-        </div>
+              <!-- Extra dodatak slanina -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/Slanina.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Slanina&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="slanina" class="round-checkbox" type="checkbox" name="slanina"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br><br>
+            <!-- treci red -->
+            <div class="pocetakReda row"
+              *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+              <!-- Extra dodatak jalapeno -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/TostSir.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Jalapeno&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="jalapeno" class="round-checkbox" type="checkbox" name="jalapeno"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Extra dodatak sampinjoni -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/Sampinjoni.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Sampinjoni&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="sampinjoni" class="round-checkbox" type="checkbox" name="sampinjoni"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extra dodatak hrskavi luk -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/HrskaviLuk.png');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Hrskavi luk&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="hrskaviLuk" class="round-checkbox" type="checkbox" name="hrskaviLuk"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br><br>
+            <!-- cetrvrti red ekstra dodaci -->
+            <div class="pocetakReda row"
+              *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
+              <!-- Extra dodatak guacamole -->
+              <div class="colStyle">
+                <div class="sosImg" style="background-image: url('assets/ekstraDodaci/guac.jfif');"></div>
+                <div class="colInfo">
+                  <div class="colInfoStyle">
+                    <div class="colInfoNaziv">
+                      Guacamole&nbsp;&nbsp;<span class="spanStyle">+80 DIN</span></div>
+                    <div class="colInfoAction">
+                      <input [(ngModel)]="guacamole" class="round-checkbox" type="checkbox" name="guacamole"
+                        (change)="calculateSubtotal()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Kraj cetvrtog reda extra dodaci -->
+            <!-- Kraj ekstra dodaci -->
+            <br><br><br><br>
+            <!-- Posebni zahtevi, brojac i dugme poruci -->
+            <div class="container">
+              <div class="posebanZahtevTitle">Posebni zahtevi</div>
+              <textarea rows="7" cols="150" [(ngModel)]="posebanZahtev" name="posebanZahtev"></textarea>
+              <div class="poruciGlavniDiv">
+                <div class="ukupnoIKolicinaDiv">
+                  <label class="card-text">
+                    <strong class="poruciTextStyle">Ukupno: </strong>
+                    <label id="subtotal" class="poruciTextStyle">{{calculateSubtotal()}} Din</label>
+                  </label>
+                  <label class="card-text kolicinaLabel">
+                    <strong class="poruciTextStyle">Kolicina: </strong>
+                    <button type="button" class="decrementerIncrementer" (click)="decrementCount()">-</button>
+                    <input [(ngModel)]="count" (change)="validateCount()" type="number" name="count" required min="1"
+                      max="5" readonly>
+                    <button type="button" class="decrementerIncrementer" (click)="incrementCount()">+</button>
+                  </label>
+                </div>
+                <div class="poruciDugmeDiv">
+                  <button type="submit" [disabled]="!form.form.valid || checkMeat()"
+                    *ngIf="productInfo?.productStatus == 0; else offBlock"
+                    class="btn btn-primary btn-lg poruciBtn">Dodaj u korpu</button>
+                  <div *ngIf="checkMeat()" class="mesoError">
+                    *Odaberi meso</div>
+                </div>
+              </div>
+            </div>
+            <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>
+          </div>
         </form>
-
-        <!-- proba -->
-        
-        
-        
-        <!-- kraj probe -->
-
       </div>
     </div>
   </div>

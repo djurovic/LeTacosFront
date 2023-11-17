@@ -1,74 +1,190 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-</style>
-
-<!-- <h1>KORPA</h1>
-<h1 align="center" class="display-4 mb-5">My Cart</h1> -->
 <br>
-<div style="text-align: center; color: black; font-size: 32px; font-family: Poppins; font-weight: 700; line-height: 36px; word-wrap: break-word">Vaša porudžbina</div>
+<div
+    class="heading">
+    Vaša porudžbina</div>
 <br>
 
-<!--Cart Detail Table-->
-<!-- <table class="table table-striped text-center">
-    <thead>
-        <tr>
-            <th scope="col">Photo</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Subtotal</th>
-            <th scope="col">Action</th>
 
-        </tr>
-    </thead>
-    <tbody>
 
-        <tr *ngFor="let productInOrder of productInOrders">
-            <th class="align-middle" scope="row">
-                <a routerLink="/product/{{productInOrder.productId}}"><img height="100px"
-                        src="{{productInOrder.productIcon}}" alt="{{productInOrder.productName}}"></a>
-            </th>
-            <td class="align-middle"><a
-                    routerLink="/product/{{productInOrder.productId}}">{{productInOrder.productName}}</a></td>
-            <td class="align-middle">{{productInOrder.productPrice | currency}}</td>
 
-            <td class="align-middle">
-                <a (click)="minusOne(productInOrder)"><i class="fa fa-minus"></i></a>
-                <input min="1" id="{{productInOrder.productId}}" [max]=productInOrder.productStock
-                    [(ngModel)]="productInOrder.count" (change)="onChange(productInOrder)" size="5" type="number"
-                    required name='count' readonly max="5">
-                <a (click)="addOne(productInOrder)"> <i class="fa fa-plus"></i></a>
-            </td> -->
+<br><br>
+<div *ngIf="isTableLayout">
+<div class="container table-responsive" style="margin-top: 2%;" *ngIf="productInOrders?.length > 0; else empty">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Proizvod</th>
+                <th scope="col">Dodaci</th>
+                <th scope="col">Cena</th>
+                <th scope="col">Kolicina</th>
+                <th scope="col" style="color: white;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let productInOrder of productInOrders">
+                <td>
+                    <img src="{{productInOrder.productIcon}}" alt="Product Image" style="max-width: 100px;">
+                    {{productInOrder.productName}}
+                </td>
+                <td>
+                    <ul class="list-group list-group-flush">
+                        <!-- Product details here -->
+                        <!-- meso -->
+                        <li class="list-group-item" *ngIf="productInOrder.mariniranaPiletina>0">Marinirana piletina
+                            <span
+                                *ngIf="productInOrder.mariniranaPiletina>1">{{productInOrder.mariniranaPiletina}}</span>
+                        </li>
+                        <li class="list-group-item" *ngIf="productInOrder.mlevenaJunetina>0">Mlevena junetina <span
+                                *ngIf="productInOrder.mlevenaJunetina>1"></span>{{productInOrder.mlevenaJunetina}}</li>
+                        <li class="list-group-item" *ngIf="productInOrder.rostiljKobasica>0">Rostilj kobasica <span
+                                *ngIf="productInOrder.rostiljKobasica>1"></span>{{productInOrder.rostiljKobasica}}</li>
+                        <li class="list-group-item" *ngIf="productInOrder.chickenNugets>0">Chicken nuggets <span
+                                *ngIf="productInOrder.chickenNugets>1"></span>{{productInOrder.chickenNugets}}</li>
+                        <li class="list-group-item" *ngIf="productInOrder.cordonBleu>0">Cordon bleu <span
+                                *ngIf="productInOrder.cordonBleu1"></span>{{productInOrder.cordonBleu}}</li>
+                        <li class="list-group-item" *ngIf="productInOrder.falafel>0">Falafel <span
+                                *ngIf="productInOrder.falafel>1"></span>{{productInOrder.falafel}}</li>
+                        <!-- Besplatni sos -->
+                        <li class="list-group-item" *ngIf="productInOrder.besplatniSos.length>0">Besplatni sos:
+                            {{productInOrder.besplatniSos}}</li>
+                        <!-- Extra sos -->
+                        <li class="list-group-item" *ngIf="productInOrder.kecap==true">Extra sos: Kecap(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.majonez==true">Extra sos: Majonez(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.sahara==true">Extra sos: Sahara(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.seville==true">Extra sos: Seville(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.texasBbq==true">Extra sos: Texax
+                            Barbecue(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.ninjaBlend==true">Extra sos: Ninja
+                            blend(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.kari==true">Extra sos: Kari(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.siracha==true">Extra sos: Siracha(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.barbecue==true">Extra sos: Barbecue(+80din)
+                        </li>
 
-            <!-- <td class="align-middle">{{productInOrder.productPrice * productInOrder.count|currency}}</td> -->
-<!--             <td class="align-middle">{{productInOrder.subTotal}}</td>
-            <td class="align-middle">
-                <a (click)="remove(productInOrder)" routerLink="./">Remove</a>
-            </td>
 
-        </tr>
+                        <!-- Extra dodaci -->
+                        <li class="list-group-item" *ngIf="productInOrder.tostSir==true">Extra dodatak: Tost
+                            sir(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.cedar==true">Extra dodatak: Cedar(+80din)
+                        </li>
+                        <li class="list-group-item" *ngIf="productInOrder.gauda==true">Extra dodatak: Gauda(+80din)
+                        </li>
+                        <li class="list-group-item" *ngIf="productInOrder.zdenka==true">Extra dodatak: Zdenka(+80din)
+                        </li>
+                        <li class="list-group-item" *ngIf="productInOrder.gorgonzola==true">Extra dodatak:
+                            Gorgonzola(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.slanina==true">Extra dodatak: Slanina(+80din)
+                        </li>
+                        <li class="list-group-item" *ngIf="productInOrder.jalapeno==true">Extra dodatak:
+                            Jalapeno(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.hrskaviLuk==true">Extra dodatak: Hrskavi
+                            luk(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.sampinjoni==true">Extra dodatak:
+                            Sampinjoni(+80din)</li>
+                        <li class="list-group-item" *ngIf="productInOrder.guacamole==true">Extra dodatak:
+                            Guacamole(+80din)</li>
+                        <!-- Add other extra dodaci items similarly -->
 
-    </tbody>
-</table> -->
+                        <!-- Poseban zahtev -->
+                        <li *ngIf="productInOrder.posebanZahtev.length > 0" class="list-group-item">Poseban zahtev:
+                            {{productInOrder.posebanZahtev}}</li>
+                    </ul>
+                </td>
+                <td>{{productInOrder.subTotal}} <br></td>
+                <td>{{productInOrder.count}} <br></td>
+                <td>
+                    <a (click)="remove(productInOrder)" routerLink="./"><i class="fas fa-trash-alt fa-lg"
+                            style="color: #ED6F24;"></i></a><br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-<div class="row" style="margin-left: 2%;">
-    <div *ngFor="let productInOrder of productInOrders" class="card" style="width: 20rem; margin-right: 5%;">
+    <div *ngIf="productInOrders?.length > 0; else empty">
+        <h5 class="float-start">Ukupno: <span style="color: #ED6F24;">{{total}} RSD</span></h5>
+    </div>
+    <br><br>
+
+    <div class="glavniDiv row">
+        <div class="cenaDostaveGlavni col">
+            <div class="cenaDostaveDiv">
+                <div class="ceneDostaveDivHead">
+                    <div class="cenaDostaveDivParagraf">Cena dostave</div>
+                    <div class="cenaDostaveDivLinija"></div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Podbara</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Liman 1,2,3,4</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Centar</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Stari Grad</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="naruciDiv">
+                <div class="naruciDivInfo">
+                    <div class="naruciDivInfoHeading">Plaćanje dostavljaču</div>
+                    <div class="naruciDivInfoLinija"></div>
+                </div>
+                <div class="narucDivParagraf">Potvrda porudžbine i vreme dostave se šalje putem e-maila.   Cena dostave
+                    zavisi od dela grada, i biće naplaćena od strane dostavljača na adresi.</div>
+                <button (click)="checkout()" class="naruciDivButton">
+                    <div class="naruciDivButtonText">Poruči</div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #empty>
+    <div class="container text-center" style="margin-bottom: 25%;">
+        <h2 style="font-family: Arvo; color: black;">Korpa je prazna</h2>
+    </div>
+</ng-template>
+
+</div>
+
+<br><br><br>
+
+
+
+
+
+
+
+
+
+
+<!-- Korpa za mob -->
+<div *ngIf="!isTableLayout">
+<div *ngIf="productInOrders?.length > 0; else empty">
+<div class="row" style="margin-left: 10%;">
+    <div *ngFor="let productInOrder of productInOrders" class="card" style="width: 18rem; margin-right: 5%; margin-bottom: 5%; margin-left: 5%; margin-top: 5%;">
         <img class="card-img-top" src="{{productInOrder.productIcon}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title" style="text-align: center;">{{productInOrder.productName}}</h5>
         </div>
         <ul class="list-group list-group-flush">
-            <!-- Meso -->
+            
           <li class="list-group-item" *ngIf="productInOrder.mariniranaPiletina>0">Marinirana piletina <span *ngIf="productInOrder.mariniranaPiletina>1">{{productInOrder.mariniranaPiletina}}</span></li>
           <li class="list-group-item" *ngIf="productInOrder.mlevenaJunetina>0">Mlevena junetina <span *ngIf="productInOrder.mlevenaJunetina>1"></span>{{productInOrder.mlevenaJunetina}}</li>
           <li class="list-group-item" *ngIf="productInOrder.rostiljKobasica>0">Rostilj kobasica <span *ngIf="productInOrder.rostiljKobasica>1"></span>{{productInOrder.rostiljKobasica}}</li>
           <li class="list-group-item" *ngIf="productInOrder.chickenNugets>0">Chicken nuggets <span *ngIf="productInOrder.chickenNugets>1"></span>{{productInOrder.chickenNugets}}</li>
           <li class="list-group-item" *ngIf="productInOrder.cordonBleu>0">Cordon bleu <span *ngIf="productInOrder.cordonBleu1"></span>{{productInOrder.cordonBleu}}</li>
           <li class="list-group-item" *ngIf="productInOrder.falafel>0">Falafel <span *ngIf="productInOrder.falafel>1"></span>{{productInOrder.falafel}}</li>
-          <!-- Besplatni sos -->
+          
           <li class="list-group-item" *ngIf="productInOrder.besplatniSos.length>0">Besplatni sos: {{productInOrder.besplatniSos}}</li>
-          <!-- Extra sos -->
+          
           <li class="list-group-item" *ngIf="productInOrder.kecap==true">Extra sos: Kecap(+80din)</li>
           <li class="list-group-item" *ngIf="productInOrder.majonez==true">Extra sos: Majonez(+80din)</li>
           <li class="list-group-item" *ngIf="productInOrder.sahara==true">Extra sos: Sahara(+80din)</li>
@@ -78,89 +194,81 @@
           <li class="list-group-item" *ngIf="productInOrder.kari==true">Extra sos: Kari(+80din)</li>
           <li class="list-group-item" *ngIf="productInOrder.siracha==true">Extra sos: Siracha(+80din)</li>
           <li class="list-group-item" *ngIf="productInOrder.barbecue==true">Extra sos: Barbecue(+80din)</li>
-          <!-- Extra dodaci -->
-          <li class="list-group-item" *ngIf="productInOrder.tostSir==true">Extra dodatak: Tost sir(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.cedar==true">Extra dodatak: Cedar(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.gauda==true">Extra dodatak: Gauda(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.zdenka==true">Extra dodatak: Zdenka(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.gorgonzola==true">Extra dodatak: Gorgonzola(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.slanina==true">Extra dodatak: Slanina(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.jalapeno==true">Extra dodatak: Jalapeno(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.hrskaviLuk==true">Extra dodatak: Hrskavi luk(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.sampinjoni==true">Extra dodatak: Sampinjoni(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.guacamole==true">Extra dodatak: Guacamole(+100din)</li>
-          <!-- Poseban zahtev -->
+          
+          <li class="list-group-item" *ngIf="productInOrder.tostSir==true">Extra dodatak: Tost sir(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.cedar==true">Extra dodatak: Cedar(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.gauda==true">Extra dodatak: Gauda(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.zdenka==true">Extra dodatak: Zdenka(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.gorgonzola==true">Extra dodatak: Gorgonzola(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.slanina==true">Extra dodatak: Slanina(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.jalapeno==true">Extra dodatak: Jalapeno(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.hrskaviLuk==true">Extra dodatak: Hrskavi luk(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.sampinjoni==true">Extra dodatak: Sampinjoni(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.guacamole==true">Extra dodatak: Guacamole(+80din)</li>
+          
           <li class="list-group-item" *ngIf="productInOrder.posebanZahtev.length>0">Poseban zahtev: {{productInOrder.posebanZahtev}}</li>
     
         </ul>
         <div class="card-body">
-            <p class="card-text">Subtotal: {{productInOrder.subTotal}}</p>
+            <p class="card-text">Cena: {{productInOrder.subTotal}}</p>
             <p class="card-text">Kolicina: {{productInOrder.count}}</p>
-            <a (click)="remove(productInOrder)" routerLink="./"><i class="fas fa-trash-alt fa-lg" style="color: #ED6F24;"></i></a>
-            <!-- <a (click)="minusOne(productInOrder)"><i class="fa fa-minus"></i></a>
-                    <input min="1" max="5" id="{{productInOrder.productId}}" [max]=productInOrder.productStock
-                        [(ngModel)]="productInOrder.count" (change)="onChange(productInOrder)" size="5" type="number"
-                        required name='count' readonly >
-                    <a (click)="addOne(productInOrder)"> <i class="fa fa-plus"></i></a> -->
+            <a (click)="remove(productInOrder)" routerLink="./"><i class="fas fa-trash-alt fa-lg" style="color: #ED6F24;"></i></a>            
         </div>
       </div>
     </div>
 
     <br>
-<div *ngIf="productInOrders?.length > 0; else empty">
-    <h5 style="display: inline; margin-left: 2%;">Ukupno: <span style="color: #ED6F24;">{{total}} RSD</span></h5>
-    
-    <button (click)="checkout()" class="btn btn-warning float-right">Poruci</button>
-</div>
+    <div style="margin-left: 5%;" *ngIf="productInOrders?.length > 0; else empty">
+        <h5 class="float-start">Ukupno: <span style="color: #ED6F24;">{{total}} RSD</span></h5>
+    </div>
+    <br><br>
 
+    <div class="glavniDiv row">
+        <div class="cenaDostaveGlavni col-md-6">
+            <div class="cenaDostaveDiv">
+                <div class="ceneDostaveDivHead">
+                    <div class="cenaDostaveDivParagraf">Cena dostave</div>
+                    <div class="cenaDostaveDivLinija"></div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Podbara</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Liman 1,2,3,4</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Centar</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+                <div class="cenaDostaveNaselje">
+                    <div class="cenaDostaveNaseljeIme">Stari Grad</div>
+                    <div class="cenaDostaveNaseljeCena">+300 rsd</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="naruciDiv">
+                <div class="naruciDivInfo">
+                    <div class="naruciDivInfoHeading">Plaćanje dostavljaču</div>
+                    <div class="naruciDivInfoLinija"></div>
+                </div>
+                <div class="narucDivParagraf">Potvrda porudžbine i vreme dostave se šalje putem e-maila.   Cena dostave
+                    zavisi od dela grada, i biće naplaćena od strane dostavljača na adresi.</div>
+                <button (click)="checkout()" class="naruciDivButton">
+                    <div class="naruciDivButtonText">Poruči</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 <ng-template #empty>
     <div class="container" style="height: 100%; width: 100%; margin-bottom: 25%;">
         <br><br><br><br><br>
     <h2 class="text-center" style="font-family: Arvo; color: black;">Korpa je prazna</h2>
     </div>
 </ng-template>
-
-
-
-
-
-<br><br><br>
-  <div style="display: flex;">
-    <div style="width: 45%; margin-left: 2%;">
-        <div style="width: 728px; height: 295px; padding: 24px; border-radius: 10px; overflow: hidden; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 20px; display: inline-flex">
-            <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
-              <div style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">Cena dostave</div>
-              <div style="width: 680px; height: 0px; border: 1px #575757 dotted"></div>
-            </div>
-            <div style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
-              <div style="width: 363px; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">Podbara</div>
-              <div style="color: #ED6F24; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">+300 rsd</div>
-            </div>
-            <div style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
-              <div style="width: 363px; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">Liman 1,2,3,4</div>
-              <div style="color: #ED6F24; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">+300 rsd</div>
-            </div>
-            <div style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
-              <div style="width: 363px; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">Centar</div>
-              <div style="color: #ED6F24; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">+300 rsd</div>
-            </div>
-            <div style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
-              <div style="width: 363px; color: #262626; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">Stari Grad</div>
-              <div style="color: #ED6F24; font-size: 16px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word">+300 rsd</div>
-            </div>
-          </div>
-    </div>
-    <div>
-        <div style="width: 100%; height: 100%; padding: 24px; background: white; border-radius: 10px; border: 1px #D7D5D5 solid; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px; display: inline-flex">
-            <div style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
-                <div style="text-align: center; color: #262626; font-size: 20px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word">Plaćanje dostavljaču</div>
-                <div style="width: 430px; height: 0px; border: 1px #575757 dotted"></div>
-            </div>
-            <div style="width: 420px; color: #575757; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">Potvrda porudžbine i vreme dostave se šalje putem e-maila.    Cena dostave zavisi od dela grada, i biće naplaćena od strane dostavljača na adresi.</div>
-            <div style="align-self: stretch; padding-left: 64px; padding-right: 64px; padding-top: 14px; padding-bottom: 14px; background: #FFF0E1; border-radius: 10px; border: 1px #ED6F24 solid; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-                <div style="color: #ED6F24; font-size: 16px; font-family: Arvo; font-weight: 700; word-wrap: break-word">Naručite</div>
-            </div>
-        </div>
-    </div>
-  </div>
-
+</div>

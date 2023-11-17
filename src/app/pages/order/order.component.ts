@@ -40,7 +40,7 @@ export class OrderComponent implements OnInit, OnDestroy {
     }
 
     startRefreshing() {
-        this.refreshSubscription = interval(3000).subscribe(() => {
+        this.refreshSubscription = interval(2000).subscribe(() => {
             this.refreshTableData();
         });
     }

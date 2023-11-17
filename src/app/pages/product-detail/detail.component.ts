@@ -133,34 +133,34 @@ export class DetailComponent implements OnInit {
     let subtotal2=this.productInfo.productPrice;
     //Extra dodaci
     if (this.tostSir == true) {
-      subtotal2 += 100;
+      subtotal2 += 80;
     }
     if (this.cedar == true) {
-      subtotal2 += 100;
+      subtotal2 += 80;
     }
     if(this.gauda == true) {
-      subtotal2 += 100;
+      subtotal2 += 80;
     }
     if (this.zdenka == true) {
-      subtotal2 += 100;
+      subtotal2 += 80;
     }
     if (this.gorgonzola == true) {
-      subtotal2 += 150;
+      subtotal2 += 80;
     }
     if (this.slanina == true) {
       subtotal2 += 80;
     }
     if (this.jalapeno == true) {
-      subtotal2 += 40;
+      subtotal2 += 80;
     }
     if(this.sampinjoni == true) {
-      subtotal2 += 100;
+      subtotal2 += 80;
     }
     if (this.hrskaviLuk == true) {
-      subtotal2 += 40;
+      subtotal2 += 80;
     }
     if (this.guacamole == true) {
-      subtotal2 += 150;
+      subtotal2 += 80;
     }
 
     //Extra sosevi
@@ -198,8 +198,18 @@ export class DetailComponent implements OnInit {
 
   checkMeat() {
     if(this.productInfo.categoryType == 0) {
-      if(this.chickenNugets+this.mlevenaJunetina+this.mariniranaPiletina+this.cordonBleu+this.falafel+this.rostiljKobasica <1)
-      return true;
+      if(this.productInfo.productId=="T0001") {
+        if(this.chickenNugets+this.mlevenaJunetina+this.mariniranaPiletina+this.cordonBleu+this.falafel+this.rostiljKobasica <1)
+        return true;
+      }
+      if(this.productInfo.productId=="T0002") {
+        if(this.chickenNugets+this.mlevenaJunetina+this.mariniranaPiletina+this.cordonBleu+this.falafel+this.rostiljKobasica <2)
+        return true;
+      }
+      if(this.productInfo.productId=="T0003") {
+        if(this.chickenNugets+this.mlevenaJunetina+this.mariniranaPiletina+this.cordonBleu+this.falafel+this.rostiljKobasica <3)
+        return true;
+      }
     }
   }
 

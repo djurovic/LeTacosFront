@@ -4,3 +4,16 @@
     border-color: #FFF0E1;
     font-weight: bold;
 }
+
+.formDiv {
+    width:30%;
+    margin: 25px auto;
+}
+
+@media (max-width: 767px) {
+    
+     .formDiv {
+       width: auto;
+       margin: auto;
+     }
+ }

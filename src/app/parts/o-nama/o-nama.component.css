@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+/*Prvi red*/
+.glavniDiv1 {
+  width: 100%; 
+  height: 100%; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  display: inline-flex;
+}
+
+.div1col1 {
+  width: 972px; 
+  align-self: stretch; 
+  padding-left: 220px; 
+  padding-right: 220px; 
+  padding-top: 128px; 
+  padding-bottom: 128px; 
+  background: white; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 32px; 
+  display: inline-flex;
+}
+
+.div1col1Text {
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 16px; 
+  display: flex;
+}
+
+.div1col1Heading {
+  color: #262626; 
+  font-size: 48px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 72px; 
+  word-wrap: break-word;
+}
+
+.div1col1Linija {
+  width: 90px; 
+  height: 6px; 
+  background: #ED6F24;
+}
+
+.div1col1Paragraf {
+  width: 532px; 
+  color: #575757; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
+}
+
+.imgDiv1 {
+  width: 948px; 
+  height: 846px; 
+  position: relative; 
+  background: linear-gradient(0deg, #FBFBFB 0%, #FBFBFB 100%), linear-gradient(0deg, #ED6F24 0%, #ED6F24 100%);
+}
+
+/*Drugi red*/
+.glanviDiv2 {
+  width: 100%; 
+  height: 100%; 
+  padding-left: 220px; 
+  padding-right: 220px; 
+  padding-top: 128px; 
+  padding-bottom: 128px; 
+  background: #ED6F24; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 64px; 
+  display: inline-flex
+}
+
+.div2Tekst {
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 16px; 
+  display: flex;
+}
+
+.div2TextHeading {
+  text-align: center;
+  color: white;
+  font-size: 48px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 72px; 
+  word-wrap: break-word;
+}
+
+.div2TextLinija {
+  width: 90px;
+  height: 6px; 
+  background: white;
+}
+
+.div2TextParagraf {
+  width: 602.79px; 
+  color: #FFF0E1; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
+}
+
+.div2kartice {
+  width: 100%;
+  position: relative;
+}
+
+.div2Kartica1 {
+  width: 477px; 
+  height: 421px; 
+  padding-left: 32px; 
+  padding-right: 32px; 
+  padding-top: 56px; 
+  padding-bottom: 56px; 
+  left: 0px; 
+  top: 0px; 
+  position: absolute; 
+  background: white; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 54px; 
+  display: inline-flex;
+}
+
+.div2KarticaNavodnici {
+  width: 56px; height: 49px;;
+}
+
+.div2KarticaTekst {
+  align-self: stretch; 
+  color: #575757; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
+}
+
+.div2KarticaIme {
+  text-align: center; 
+  color: #575757; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 600; 
+  line-height: 24px; 
+  word-wrap: break-word;
+}
+
+.div2Kartica2 {
+  width: 477px; 
+  height: 485px; 
+  padding-left: 32px; 
+  padding-right: 32px; 
+  padding-top: 56px; 
+  padding-bottom: 56px; 
+  left: 501.50px; 
+  top: 0px; 
+  position: absolute; 
+  background: white; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 54px; 
+  display: inline-flex;
+}
+
+.div2Kartica3 {
+  width: 477px; 
+  height: 421px; 
+  padding-left: 32px; 
+  padding-right: 32px; 
+  padding-top: 56px; 
+  padding-bottom: 56px; 
+  left: 1003px; 
+  top: 0px; 
+  position: absolute; 
+  background: white; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 54px; 
+  display: inline-flex;
+}
+
+
+
+/*Treci red*/
+.glavniDiv3 {
+  width: 100%; 
+  height: 100%; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  display: inline-flex;
+}
+
+.imgK {
+  width: 948px; 
+  height: 862px; 
+  position: relative; 
+  background: linear-gradient(0deg, #FBFBFB 0%, #FBFBFB 100%)
+}
+ 
+.div3col2 {
+  width: 972px; 
+  align-self: stretch; 
+  padding-left: 220px; 
+  padding-right: 220px; padding-top: 128px; 
+  padding-bottom: 128px; 
+  background: white; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 32px; 
+  display: inline-flex;
+}
+
+.div3col2Text {
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 16px; 
+  display: flex;
+}
+
+.div3col2h1 {
+  align-self: stretch; 
+  color: #262626; 
+  font-size: 48px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 72px; 
+  word-wrap: break-word;
+}
+
+.div3col2Linija {
+  width: 90px;
+  height: 6px;
+  background: #ED6F24;
+}
+
+.div3col2Paragraf {
+  width: 532px;
+  color: #575757; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #FFF0E1; 
+  color: #ED6F24; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer;
+}
+
+/* Media query for smaller screens (max-width: 767px) */
+@media (max-width: 767px) {
+
+  /*Za prvi red*/
+  .glavniDiv1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .div1col1 {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .div1col1Heading {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .div1col1Paragraf {
+    width: 100%;
+  }
+
+  .imgDiv1 {
+    width: 100%;
+    height: auto;
+  }
+
+  /*Za drugi red*/
+  .glanviDiv2 {
+    padding: 20px;
+  }
+
+  .div2Tekst {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .div2TextHeading {
+    font-size: 36px;
+    line-height: 54px;
+    text-align: center;
+  }
+
+  .div2TextLinija {
+    margin: 0 auto;
+  }
+
+  .div2TextParagraf {
+    width: 100%;
+    text-align: center;
+  }
+
+  .div2kartice {
+    flex-direction: column;
+  }
+
+  .div2Kartica1,
+  .div2Kartica2,
+  .div2Kartica3 {
+    width: 100%;
+    position: relative;
+    left: 0;
+    margin-bottom: 20px;
+  }
+
+
+  /*Za treci red*/
+  .glavniDiv3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imgK {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .div3col2 {
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .div3col2h1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .div3col2Linija {
+    width: 60px;
+  }
+
+  .div3col2Paragraf {
+    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .hide-on-mobile {
+    display: none; /* Hide the element on small screens */
+  }
+}
+
+
+

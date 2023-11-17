@@ -10,7 +10,6 @@
         <th scope="col">Ime</th>
         <th scope="col">Tip</th>
         <th scope="col">Cena</th>
-        <th scope="col">Status</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
@@ -22,8 +21,7 @@
         <td class="align-middle">{{productInfo.productId}}</td>
         <td class="align-middle">{{productInfo.productName}}</td>
         <td class="align-middle">{{CategoryType[productInfo.categoryType]}}</td>
-        <td class="align-middle">{{productInfo.productPrice | currency}}</td>
-        <td class="align-middle">{{ProductStatus[productInfo.productStatus]}}</td>
+        <td class="align-middle">{{productInfo.productPrice}}</td>
         <td class="align-middle">
             <a style="display: block" routerLink="/seller/product/{{productInfo.productId}}/edit">
                 Izmeni</a>

@@ -26,7 +26,7 @@ export class ProductAddComponent implements OnInit {
 
   
 
-  onSubmit() {
+  onSubmit(product: ProductInfo) {
     if (this.product) {
       console.log(this.product + "FInal");      
       this.add();

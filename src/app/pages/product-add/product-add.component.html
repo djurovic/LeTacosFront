@@ -1,6 +1,6 @@
 <h1 align="center" class="display-4 mb-5">Dodaj proizvod</h1>
 <div style="width:40%; margin: 25px auto">
-    <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <form #form="ngForm" (ngSubmit)="onSubmit(product)">
         <!--Id-->
         <div class="form-group">
             <label for="productId">Kod</label>
@@ -65,14 +65,7 @@
         <!--Stock-->
       
         <!--Status-->
-        <div class="form-group">
-            <label for="productStatus">Status</label>
-            <select class="custom-select custom-select-lg " id="productStatus" name="productStatus" required
-                    [(ngModel)]="product.productStatus">
-                <option [ngValue]=0>Available</option>
-                <option [ngValue]=1>Unavailable</option>
-            </select>
-        </div>
+        
         <div class="form-group">
             <button type="submit" [disabled]="!form.form.valid" (click)="onSubmit(product)" class="btn btn-lg btn-primary btn-block">Dodaj</button>
             <button type="cancel" [disabled]="!form.form.valid" class="btn btn-lg btn-danger btn-block">Odustani</button>

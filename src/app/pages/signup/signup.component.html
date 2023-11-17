@@ -1,18 +1,14 @@
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-</style>
-
 <br><br><br>
-<h1 align="center" class="display-4 mb-5" style="text-align: center; color: #262626; font-size: 35px; font-family: Arvo; font-weight: 700; line-height: 30px; word-wrap: break-word;">Registruj se</h1>
-<div style="width:40%; margin: 25px auto">
+<h1 align="center" class="display-4 mb-5 registerHeading">Registruj se</h1>
+<div class="formDiv">
   <form #form="ngForm" (ngSubmit)="onSubmit()">
-    
-    
+
+
     <div class="form-inline">
-      <div class="form-group" style="display: inline-block; margin-right: 10px;" >
-        <label style="display: block; text-align: left;"><b>Ime</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-        <input [(ngModel)]="user.name" type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Vase ime" required #name="ngModel" style="width: 350px;">
+      <div class="form-group imeDiv">
+        <label class="DivLabel"><b>Ime</b> <span class="spanError">*</span></label>
+        <input [(ngModel)]="user.name" type="text" class="form-control form-control-lg imeInput" id="name" name="name"
+          placeholder="Vase ime" required #name="ngModel">
         <div *ngIf="name.invalid && (name.dirty || name.touched)">
           <div *ngIf="name.errors.required">
             Potrebno je ime.
@@ -22,10 +18,11 @@
           </div>
         </div>
       </div>
-      
-      <div class="form-group" style="display: inline-block;">
-        <label style="display: block; text-align: left;"><b>Prezime</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-        <input [(ngModel)]="user.surname" type="text" class="form-control form-control-lg" id="surname" name="surname" placeholder="Vase prezime" required #surname="ngModel" style="width: 350px;">
+
+      <div class="form-group prezimeDiv">
+        <label class="DivLabel"><b>Prezime</b> <span class="spanError">*</span></label>
+        <input [(ngModel)]="user.surname" type="text" class="form-control form-control-lg prezimeInput" id="surname" name="surname"
+          placeholder="Vase prezime" required #surname="ngModel">
         <div *ngIf="surname.invalid && (surname.dirty || surname.touched)">
           <div *ngIf="surname.errors.required">
             Potrebno je prezime.
@@ -38,7 +35,7 @@
     </div>
     <br>
     <div class="form-group">
-      <label style="display: block; text-align: left;"><b>Email</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
+      <label class="DivLabel"><b>Email</b> <span class="spanError">*</span></label>
       <input [(ngModel)]="user.email" type="email" class="form-control form-control-lg" id="email" name="email"
         placeholder="Unesite email" email required autofocus #email="ngModel">
       <div *ngIf="email.invalid && (email.dirty ||email.touched)">
@@ -51,7 +48,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label style="display: block; text-align: left;"><b>Sifra</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
+      <label class="DivLabel"><b>Sifra</b> <span class="spanError">*</span></label>
       <input [(ngModel)]="user.password" type="password" class="form-control form-control-lg" id="password"
         name="password" placeholder="Sifra" minlength="3" required #password="ngModel">
       <div *ngIf="password.invalid && (password.dirty ||password.touched)">
@@ -63,10 +60,10 @@
         </div>
       </div>
     </div>
-    <div class="form-group" >
-      <label style="display: block; text-align: left;"><b>Telefon</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-      <input [(ngModel)]="user.phone" type="text" class="form-control form-control-lg" id="phone" name="phone"
-        placeholder="Broj telefona" required #phone="ngModel" style="width: 100%; height: 100%; padding-left: 16px; padding-right: 16px; padding-top: 12px; padding-bottom: 12px; background: white; border-radius: 10px; border: 1px #D7D5D5 solid">
+    <div class="form-group">
+      <label class="DivLabel"><b>Telefon</b> <span class="spanError">*</span></label>
+      <input [(ngModel)]="user.phone" type="text" class="form-control form-control-lg telefonInput" id="phone" name="phone"
+        placeholder="Broj telefona" required #phone="ngModel">
       <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)">
         <div *ngIf="phone.errors.required">
           Potreban je broj telefona
@@ -76,71 +73,69 @@
 
     <!-- Ulica i broj -->
     <div class="form-inline">
-    <div class="form-group" style="display: inline-block; margin-right: 10px;">
-      <label style="display: block; text-align: left;"><b>Ulica</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-      <input [(ngModel)]="user.ulica" type="text" class="form-control form-control-lg" id="ulica" name="ulica"
-        placeholder="Ulica" required #ulica="ngModel" style="width: 550px;">
-      <div *ngIf="ulica.invalid && (ulica.dirty ||ulica.touched)">
-        <div *ngIf="ulica.errors.required">
-          Potrebna je ulica
+      <div class="form-group ulicaDiv">
+        <label class="DivLabel"><b>Ulica</b> <span class="spanError">*</span></label>
+        <input [(ngModel)]="user.ulica" type="text" class="form-control form-control-lg ulicaInput" id="ulica" name="ulica"
+          placeholder="Ulica" required #ulica="ngModel">
+        <div *ngIf="ulica.invalid && (ulica.dirty ||ulica.touched)">
+          <div *ngIf="ulica.errors.required">
+            Potrebna je ulica
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-group" style="display: inline-block;">
-      <label style="display: block; text-align: left;"><b>Broj</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-      <input [(ngModel)]="user.broj" type="text" class="form-control form-control-lg" id="broj" name="broj"
-        placeholder="Broj" required #broj="ngModel" style="width: 200px;">
-      <div *ngIf="broj.invalid && (broj.dirty ||broj.touched)">
-        <div *ngIf="broj.errors.required">
-          Potreban je broj u ulici
+      <div class="form-group brojDiv">
+        <label class="DivLabel"><b>Broj</b> <span class="spanError">*</span></label>
+        <input [(ngModel)]="user.broj" type="text" class="form-control form-control-lg brojInput" id="broj" name="broj"
+          placeholder="Broj" required #broj="ngModel">
+        <div *ngIf="broj.invalid && (broj.dirty ||broj.touched)">
+          <div *ngIf="broj.errors.required">
+            Potreban je broj u ulici
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <!-- Interfon broj stana sprat -->
     <div class="form-inline">
-    <div class="form-group" style="display: inline-block; margin-right: 10px;">
-      <label style="display: block; text-align: left;"><b>Interfon</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-      <input [(ngModel)]="user.interfon" type="text" class="form-control form-control-lg" id="interfon" name="interfon"
-        placeholder="Interfon" required #interfon="ngModel" style="width: 440px;">
-      <div *ngIf="interfon.invalid && (interfon.dirty ||interfon.touched)">
-        <div *ngIf="interfon.errors.required">
-          Potreban je interfon
+      <div class="form-group intefonDiv">
+        <label class="DivLabel"><b>Interfon</b> <span class="spanError">*</span></label>
+        <input [(ngModel)]="user.interfon" type="text" class="form-control form-control-lg interfonInput" id="interfon"
+          name="interfon" placeholder="Interfon" required #interfon="ngModel">
+        <div *ngIf="interfon.invalid && (interfon.dirty ||interfon.touched)">
+          <div *ngIf="interfon.errors.required">
+            Potreban je interfon
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-group" style="display: inline-block; margin-right: 10px;">
-      <label style="display: block; text-align: left;"><b>Broj stana</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-      <input [(ngModel)]="user.brojStana" type="text" class="form-control form-control-lg" id="brojStana" name="brojStana"
-        placeholder="Broj stana" required #brojStana="ngModel" style="width: 150px;">
-      <div *ngIf="brojStana.invalid && (brojStana.dirty ||brojStana.touched)">
-        <div *ngIf="brojStana.errors.required">
-          Potreban je broj stana
+      <div class="form-group brStanaDiv">
+        <label class="DivLabel"><b>Broj stana</b> <span class="spanError">*</span></label>
+        <input [(ngModel)]="user.brojStana" type="text" class="form-control form-control-lg brStanaInput" id="brojStana"
+          name="brojStana" placeholder="Broj stana" required #brojStana="ngModel">
+        <div *ngIf="brojStana.invalid && (brojStana.dirty ||brojStana.touched)">
+          <div *ngIf="brojStana.errors.required">
+            Potreban je broj stana
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-group" style="display: inline-block;">
-      <label style="display: block; text-align: left;"><b>Sprat</b> <span style="color: #ED2424; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 32px; word-wrap: break-word">*</span></label>
-      <input [(ngModel)]="user.sprat" type="text" class="form-control form-control-lg" id="sprat" name="sprat"
-        placeholder="Sprat" required #sprat="ngModel" style="width: 150px;">
-      <div *ngIf="sprat.invalid && (sprat.dirty ||sprat.touched)">
-        <div *ngIf="sprat.errors.required">
-          Potreban je sprat
+      <div class="form-group spratDiv">
+        <label class="DivLabel"><b>Sprat</b> <span class="spanError">*</span></label>
+        <input [(ngModel)]="user.sprat" type="text" class="form-control form-control-lg spratInput" id="sprat" name="sprat"
+          placeholder="Sprat" required #sprat="ngModel">
+        <div *ngIf="sprat.invalid && (sprat.dirty ||sprat.touched)">
+          <div *ngIf="sprat.errors.required">
+            Potreban je sprat
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <!-- submit -->
+    <br>
+    <!-- submit -->
 
     <div class="form-group">
-      <button type="submit" class="btn btn-lg btn-primary btn-block"  [disabled]="!form.form.valid">Registruj se</button>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!form.form.valid">Registruj se</button>
     </div>
-    
+
   </form>
 </div>
-
-

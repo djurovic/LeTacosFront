@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+/*Prethodno*/
 a {
     color: inherit;
 }
@@ -7,4 +10,750 @@ a:hover {
 
 #sel:hover {
     border: 1px #ED6F24 solid; border-radius: 10px; overflow: hidden;
+}
+
+/* Staticki html i css */
+/* Pocetna slika i tekst */
+
+.pocetniGlavniDiv {
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(0deg, #ED6F24 0%, #ED6F24 100%), linear-gradient(80deg, #ED6F24 0%, rgba(237, 111, 36, 0.92) 13%, rgba(237, 111, 36, 0) 80%);
+}
+
+.pocetnaImg {
+    width: 100%; 
+    height: 100%;
+}
+
+.pocetnaTransform {
+    position: absolute; 
+    top: 50%; 
+    left: 30%; 
+    transform: translate(-50%, -50%); 
+    text-align: left; 
+    color: white; 
+    font-size: 24px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 1.2; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pocetnaHeading {
+    font-size: 80px;
+    line-height: 120px;
+}
+
+.pocetnaParagraf {
+    font-size: 16px;
+}
+
+/* Uvodni tekst za takose */
+.uvodniTextTakosiDiv {
+    width: 100%; 
+    height: 100%; 
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 12px; 
+    display: inline-flex;
+}
+
+.uvodniTextTakosiHeading {
+    text-align: center; 
+    color: #262626; 
+    font-size: 48px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 72px; 
+    word-wrap: break-word;
+}
+
+.uvodniTextTakosiLinija {
+    width: 90px;
+    height: 6px; 
+    background: #ED6F24;
+}
+
+.uvodniTextTakosParagraf {
+    width: 603px; 
+    text-align: center; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+/* Uvodni tekst za finger food */
+
+.tekstFingerDiv {
+  width: 100%; 
+  height: 100%; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 16px; 
+  display: inline-flex;
+}
+
+.tekstFingerHeading {
+  text-align: center; 
+  color: #262626; 
+  font-size: 48px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 72px; 
+  word-wrap: break-word;
+}
+
+.tekstFingerLinija {
+  width: 90px; 
+  height: 6px; 
+  background: #ED6F24;
+}
+
+.tekstFingerParagraf {
+  width: 603px; 
+  text-align: center; 
+  color: #575757; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
+}
+
+/* Uvodni tekst za pice */
+.tekstPiceDiv {
+  width: 100%; 
+  height: 100%; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 16px; 
+  display: inline-flex;
+}
+
+.tekstPiceHeading {
+  text-align: center; 
+  color: #262626; 
+  font-size: 48px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 72px; 
+  word-wrap: break-word;
+}
+
+.tekstPiceLinija {
+  width: 90px;
+  height: 6px; 
+  background: #ED6F24;
+}
+
+.tekstPiceParagraf {
+  width: 603px; 
+  text-align: center; 
+  color: #575757; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
+}
+
+/* Utisci */
+.utisciGlavniDiv {
+    width: 100%; 
+    height: 100%; 
+    padding-left: 220px; 
+    padding-right: 220px; 
+    padding-top: 128px; 
+    padding-bottom: 128px; 
+    background: #ED6F24; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 64px; 
+    display: inline-flex
+  }
+  
+  .utisciTekst {
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 16px; 
+    display: flex;
+  }
+  
+  .utisciTekstHeading {
+    text-align: center;
+    color: white;
+    font-size: 48px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 72px; 
+    word-wrap: break-word;
+  }
+  
+  .utisciTekstLinija {
+    width: 90px;
+    height: 6px; 
+    background: white;
+  }
+  
+  .utisciTekstParagraf {
+    width: 602.79px; 
+    color: #FFF0E1; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+  }
+  
+  .utisciKartice {
+    width: 100%;
+    position: relative;
+  }
+  
+  .utisciKartica1 {
+    width: 477px; 
+    height: 421px; 
+    padding-left: 32px; 
+    padding-right: 32px; 
+    padding-top: 56px; 
+    padding-bottom: 56px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 54px; 
+    display: inline-flex;
+  }
+  
+  .utisciKarticaNavodnici {
+    width: 56px; height: 49px;;
+  }
+  
+  .utisciKarticaTekst {
+    align-self: stretch; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+  }
+  
+  .utisciKarticaIme {
+    text-align: center; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+  }
+  
+  .utisciKartica2 {
+    width: 477px; 
+    height: 485px; 
+    padding-left: 32px; 
+    padding-right: 32px; 
+    padding-top: 56px; 
+    padding-bottom: 56px; 
+    left: 501.50px; 
+    top: 0px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 54px; 
+    display: inline-flex;
+  }
+  
+  .utisciKartica3 {
+    width: 477px; 
+    height: 421px; 
+    padding-left: 32px; 
+    padding-right: 32px; 
+    padding-top: 56px; 
+    padding-bottom: 56px; 
+    left: 1003px; 
+    top: 0px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 54px; 
+    display: inline-flex;
+  }
+  
+
+/* O nama */
+.oNamaGlavniDiv {
+    width: 100%; 
+    height: 100%; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    display: inline-flex;
+}
+
+.oNamaDrugiDiv {
+    width: 972px; 
+    align-self: stretch; 
+    padding-left: 220px; 
+    padding-right: 220px; 
+    padding-top: 128px; 
+    padding-bottom: 128px; 
+    background: white; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 32px; 
+    display: inline-flex;
+}
+
+.oNamaTekst {
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 16px; 
+    display: flex;
+}
+
+.oNamaHeading {
+    color: #262626; 
+    font-size: 48px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 72px; 
+    word-wrap: break-word;
+}
+
+.oNamaLinija {
+    width: 90px; 
+    height: 6px; 
+    background: #ED6F24;
+}
+
+.oNamaParagraf {
+    width: 532px; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+.oNamaAncor {
+    text-decoration: none; 
+    font-family: Arvo;
+}
+
+.oNamaBtn {
+    background-color: #FFF0E1; 
+    color: #ED6F24; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer;
+}
+
+.oNamaBtn:hover {
+    background-color: #d8aa8f; /* Darken the background color on hover */
+}
+
+.oNamaImg {
+    width: 948px; 
+    height: 846px; 
+    position: relative; 
+    background: linear-gradient(0deg, #FBFBFB 0%, #FBFBFB 100%), linear-gradient(0deg, #ED6F24 0%, #ED6F24 100%);
+}
+
+/*Poruci div*/
+.poruciGlavniDiv {
+    width: 100%; 
+    height: 100%; 
+    padding-left: 220px; 
+    padding-right: 220px; 
+    padding-top: 128px; 
+    padding-bottom: 128px; 
+    background: #ED6F24; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 64px; 
+    display: inline-flex;
+}
+
+.poruciDrugiDiv {
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 16px; 
+    display: flex;
+}
+
+.poruciHeading {
+    text-align: center; 
+    color: white; 
+    font-size: 48px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 72px; 
+    word-wrap: break-word;
+}
+
+.poruciLinija {
+    width: 90px; 
+    height: 6px; 
+    background: white;
+}
+
+.poruciParagraf {
+    width: 728.08px; 
+    text-align: center; 
+    color: #FFF0E1; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+.poruciLink {
+    text-decoration: none;
+    font-family: Arvo;
+}
+
+.poruciBtn {
+    background-color: #FFF0E1; 
+    color: #ED6F24; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer;
+}
+
+.poruciBtn:hover {
+    background-color: #d8aa8f; /* Darken the background color on hover */
+}
+
+
+
+/* Dinamicki deo kartice */
+.cardGlavniDiv {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.cardForPetlja {
+  margin-right: 0px; 
+  margin-left: 0px;
+}
+
+.cardStyle {
+  flex: 1 1 0; 
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); 
+  border-radius: 10px; 
+  overflow: hidden; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  display: inline-flex; 
+  padding: 10px;
+}
+
+.cardImgDiv {
+  width: 100%;
+  height: 100%; 
+  position: relative;
+  background: linear-gradient(0deg, #FFF2EC 0%, #FFF2EC 100%); 
+  overflow: hidden;
+}
+
+.cardImgStyle {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+}
+
+.cardNamePriceDiv {
+  padding: 24px; 
+  background: white; 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: left;
+}
+
+.cardNamePriceDivStyle {
+  flex-grow: 1;
+}
+
+
+/* Ovo sredi u media query */
+.cardNameStyle {
+  text-align: left;
+  font-family: Arvo;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+/* Ovo sredu u media query */
+.cardPriceStyle {
+  color: #ED6F24;
+  font-weight: 700; 
+  font-size: 24px; 
+  font-family: Arvo; 
+  line-height: 30px; 
+  word-wrap: break-word;
+}
+
+.offBlockGlavniDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.offBlockDivStyle {
+  background-color: rgba(0, 0, 0, 0.2); 
+  width: 100%; 
+  height: 100%; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.offBlockTekst {
+  color: white;
+  font-size: 20px;
+  font-family: Arvo;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cardTacoSpan1 {
+  color: #575757;
+  font-size: 16px;
+  font-family: Poppins; 
+  font-weight: 600; 
+  line-height: 24px; 
+  word-wrap: break-word;
+}
+
+.cardTacoSpan2 {
+  color: #575757; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 300; 
+  line-height: 30px; 
+  word-wrap: break-word;
+}
+
+.cardTacoSpan3 {
+  color: #575757;
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
+}
+
+
+
+/* Media query */
+@media (max-width: 768px) {
+  /* Staticki html i css */
+  /* Pocetna */
+  .pocetnaTransform {
+      
+      transform: translate(-50%, -75%);
+      text-align: center;
+  }
+
+  .pocetnaHeading {
+      font-size: 20px;
+      line-height: 30px;
+      text-align: left;
+  }
+
+  .pocetnaImg {
+      width: 100%;
+  }
+
+  /* Uvodni tekst za takose */
+  .uvodniTextTakosiDiv {
+      align-items: center; /* Center the items on smaller screens */
+      margin-right: 2%;
+  }
+
+  .uvodniTextTakosiHeading {
+      font-size: 24px; /* Adjust the font size for smaller screens */
+      line-height: 44px; /* Adjust the line height for smaller screens */
+  }
+
+  .uvodniTextTakosParagraf {
+      width: 80%; /* Adjust the width for smaller screens */
+      max-width: 100%; /* Ensure it doesn't exceed the screen width */
+      font-size: 14px; /* Adjust the font size for smaller screens */
+      line-height: 28px; /* Adjust the line height for smaller screens */
+  }
+
+  /* Uvodni tekst za finger food */
+  .tekstFingerDiv {
+    align-items: center; /* Center the items on smaller screens */
+  }
+
+  .tekstFingerHeading {
+      font-size: 36px; /* Adjust the font size for smaller screens */
+      line-height: 54px; /* Adjust the line height for smaller screens */
+  }
+
+  .tekstFingerParagraf {
+      width: 80%; /* Adjust the width for smaller screens */
+      max-width: 100%; /* Ensure it doesn't exceed the screen width */
+      font-size: 14px; /* Adjust the font size for smaller screens */
+      line-height: 28px; /* Adjust the line height for smaller screens */
+  }
+
+  /* Uvodni tekst za pice */
+  .tekstPiceDiv {
+    align-items: center;
+  }
+
+  .tekstPiceHeading {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .tekstPiceParagraf {
+    width: 70%; /* Adjust the width for smaller screens */
+    max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    font-size: 14px; /* Adjust the font size for smaller screens */
+    line-height: 28px;
+  }
+
+
+  /* Utisci */
+  .utisciGlavniDiv {
+      padding: 20px;
+    }
+  
+    .utisciTekst {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+  
+    .utisciTekstHeading {
+      font-size: 36px;
+      line-height: 54px;
+      text-align: center;
+    }
+  
+    .utisciTekstLinija {
+      margin: 0 auto;
+    }
+  
+    .utisciTekstParagraf {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .utisciKartice {
+      flex-direction: column;
+    }
+  
+    .utisciKartica1,
+    .utisciKartica2,
+    .utisciKartica3 {
+      width: 100%;
+      position: relative;
+      left: 0;
+      margin-bottom: 20px;
+    }
+
+  /* o nama div */
+  .oNamaGlavniDiv {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .oNamaDrugiDiv {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .oNamaHeading {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  
+    .oNamaParagraf {
+      width: 100%;
+    }
+  
+    .oNamaImg {
+      width: 100%;
+      height: auto;
+    }
+
+
+  /* poruci div */
+  .poruciGlavniDiv {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 64px;
+      padding-bottom: 64px;
+  }
+
+  .poruciHeading {
+      font-size: 36px;
+      line-height: 54px;
+  }
+
+  .poruciLinija {
+      width: 60px;
+  }
+
+  .poruciParagraf {
+      width: 100%;
+  }
+
+  .hide-on-mobile {
+      display: none; /* Hide the element on small screens */
+  }
+
+  /*Card dinamicka*/
+  .cardNamePriceDiv {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .cardNameStyle {
+    font-size: 15px;
+    margin-left: 1%;
+  }
+    
+  /* Ovo sredu u media query */
+  .cardPriceStyle {
+    font-size: 15px;
+  }
+
+  
 }

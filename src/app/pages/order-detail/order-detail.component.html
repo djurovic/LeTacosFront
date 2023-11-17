@@ -81,16 +81,16 @@
           <li class="list-group-item" *ngIf="productInOrder.siracha==true">Extra sos: Siracha(+80din)</li>
           <li class="list-group-item" *ngIf="productInOrder.barbecue==true">Extra sos: Barbecue(+80din)</li>
           <!-- Extra dodaci -->
-          <li class="list-group-item" *ngIf="productInOrder.tostSir==true">Extra dodatak: Tost sir(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.cedar==true">Extra dodatak: Cedar(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.gauda==true">Extra dodatak: Gauda(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.zdenka==true">Extra dodatak: Zdenka(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.gorgonzola==true">Extra dodatak: Gorgonzola(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.slanina==true">Extra dodatak: Slanina(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.jalapeno==true">Extra dodatak: Jalapeno(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.hrskaviLuk==true">Extra dodatak: Hrskavi luk(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.sampinjoni==true">Extra dodatak: Sampinjoni(+100din)</li>
-          <li class="list-group-item" *ngIf="productInOrder.guacamole==true">Extra dodatak: Guacamole(+100din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.tostSir==true">Extra dodatak: Tost sir(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.cedar==true">Extra dodatak: Cedar(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.gauda==true">Extra dodatak: Gauda(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.zdenka==true">Extra dodatak: Zdenka(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.gorgonzola==true">Extra dodatak: Gorgonzola(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.slanina==true">Extra dodatak: Slanina(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.jalapeno==true">Extra dodatak: Jalapeno(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.hrskaviLuk==true">Extra dodatak: Hrskavi luk(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.sampinjoni==true">Extra dodatak: Sampinjoni(+80din)</li>
+          <li class="list-group-item" *ngIf="productInOrder.guacamole==true">Extra dodatak: Guacamole(+80din)</li>
           <!-- Poseban zahtev -->
           <li class="list-group-item" *ngIf="productInOrder.posebanZahtev.length>0">Poseban zahtev: {{productInOrder.posebanZahtev}}</li>
     
@@ -109,9 +109,9 @@
 
 
  
-    <!-- <a style="display: block" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New' " (click)="cancel(order$)" routerLink="/order">Cancel</a>
+    <!-- <a style="display: block" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == '' " (click)="cancel(order$)" routerLink="/order">Cancel</a>
     <span [ngClass]="{'disabled-link': !vreme}">
-      <a style="display: block" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New'" (click)="finish(order$)" routerLink="/order">Finish</a>
+      <a style="display: block" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == ''" (click)="finish(order$)" routerLink="/order">Finish</a>
     </span> -->
     
     
@@ -131,12 +131,12 @@
   
 
   <span [ngClass]="{'disabled-link': !vreme}">
-    <a style="display: inline-flex; align-items: center; text-decoration: none; cursor: pointer; background-color: #FFF0E1; color: #ED6F24; padding: 14px 24px; border: 1px #ED6F24 solid; border-radius: 5px;" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New'" (click)="finish(order$)" routerLink="/order">Potvrdi porudžbinu</a>
+    <a style="display: inline-flex; align-items: center; text-decoration: none; cursor: pointer; background-color: #FFF0E1; color: #ED6F24; padding: 14px 24px; border: 1px #ED6F24 solid; border-radius: 5px;" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'Ceka_potvrdu'" (click)="finish(order$)" routerLink="/order">Potvrdi porudžbinu</a>
   </span>
   
 
   
-  <a style="display: inline-flex; align-items: center; margin-left: 2%; text-decoration: none; cursor: pointer; background-color: #ED2424; color: white; padding: 14px 24px; border: 1px #ED2424 solid; border-radius: 5px;" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'New'" (click)="cancel(order$)" routerLink="/order">Odbi porudžbinu</a>
+  <a style="display: inline-flex; align-items: center; margin-left: 2%; text-decoration: none; cursor: pointer; background-color: #ED2424; color: white; padding: 14px 24px; border: 1px #ED2424 solid; border-radius: 5px;" *ngIf="OrderStatus[(order$ | async)?.orderStatus] == 'Ceka_potvrdu'" (click)="cancel(order$)" routerLink="/order">Odbi porudžbinu</a>
 
   
 <br><br><br>

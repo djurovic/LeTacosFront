@@ -1,3 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+/* Ponavljajuci */
+.pocetakReda {
+  display: flex; 
+  justify-content: space-between;
+}
+
+.colStyle {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08); 
+  border-radius: 10px; 
+  overflow: hidden; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  display: inline-flex;
+}
+
+.mesoImg {
+  width: 238.33px;
+  height: 300px; 
+  padding-top: 24px; 
+  padding-bottom: 152px; 
+  padding-left: 429.33px; 
+  padding-right: 24px; 
+  background: linear-gradient(0deg, white 0%, white 100%);
+  justify-content: flex-end;
+  align-items: center;
+  display: inline-flex;
+}
+
+.colInfo {
+  align-self: stretch; 
+  height: 78px; 
+  padding: 24px; 
+  background: white; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 16px; 
+  display: flex;
+}
+
+.colInfoStyle {
+  align-self: stretch; 
+  justify-content: space-between; 
+  align-items: flex-end; 
+  display: inline-flex;
+}
+
+.colInfoNaziv {
+  text-align: center; 
+  color: #262626; 
+  font-size: 20px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 30px; 
+  word-wrap: break-word;
+}
+
+.colInfoAction {
+  justify-content: flex-start; 
+  align-items: flex-end; 
+  gap: 6px; 
+  display: flex;
+}
+
+.mesoGreska {
+  color: #ED2424; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 600; 
+  line-height: 24px; 
+  word-wrap: break-word;
+}
+
+.sosImg {
+  width: 238.33px; 
+  height: 250px; 
+  padding-top: 24px; 
+  padding-bottom: 152px; 
+  padding-left: 429.33px; 
+  padding-right: 24px; 
+  background: linear-gradient(0deg, white 0%, white 100%);  
+  background-repeat: no-repeat;
+  justify-content: flex-end; 
+  align-items: center; 
+  display: inline-flex;
+}
+
+.spanStyle {
+  color: #ED6F24; 
+  font-size: 20px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 30px; 
+  word-wrap: break-word;
+}
+
 .round-checkbox {
     width: 20px;
     height: 20px;
@@ -34,3 +134,233 @@
 
  
 
+  /* Details css */
+
+/* Ime prozvoda(nema u koliko je takos) */
+.detailDivProductName {
+  width: 100%; 
+  height: 100%; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 12px; 
+  display: inline-flex;
+}
+
+.detailDivProductNameStyle {
+  text-align: center; 
+  color: #262626; 
+  font-size: 48px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 72px; 
+  word-wrap: break-word;
+}
+
+.detailDivProductNameLinija {
+  width: 90px; 
+  height: 6px; 
+  background: #ED6F24;
+}
+
+
+/* Kartica prozivoda ukoliko nije takos */
+.karticaGlavniDiv {
+  width: 603px;
+  margin-top: 5%; 
+}
+
+.karticaSlika {
+  height: 10rm; 
+}
+
+.karticaIme {
+  color: #262626; 
+  font-size: 20px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 30px; 
+  word-wrap: break-word;
+  text-align: left; 
+  margin: 5%;;
+}
+
+.karticaCena {
+  text-align: right;
+}
+
+.karticaCenaStyle {
+  color: #ED6F24; 
+  font-size: 25px; 
+  font-family: Arvo; 
+  font-weight: 600; 
+  line-height: 48px; 
+  word-wrap: break-word;
+  margin: 5%;
+}
+
+/* Odaberi meso tekst */
+.statickiTekstDiv {
+  width: 100%; 
+  height: 100%; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 12px; 
+  display: inline-flex;
+}
+
+.statickiTekst {
+  text-align: center; 
+  color: #262626; 
+  font-size: 48px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 72px; 
+  word-wrap: break-word;
+}
+
+.statickiTekstLinija {
+  width: 90px;
+  height: 6px;
+  background: #ED6F24;
+}
+
+
+/* Poseban zahteev, brojac i dugme poruci */
+.posebanZahtevTitle {
+  color: #575757;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 32px;
+  word-wrap: break-word;
+}
+
+.poruciGlavniDiv {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.ukupnoIKolicinaDiv {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start;
+}
+
+.poruciTextStyle {
+  font-size: 24px; 
+  font-family: Poppins;
+}
+
+.kolicinaLabel {
+  margin-top: 10px;
+}
+
+.poruciDugmeDiv {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-end; 
+  margin-top: 5%;
+}
+
+.poruciBtn {
+  font-family: Arvo; 
+  color: #ED6F24; 
+  background-color: #FFF0E1; 
+  border: #FFF0E1;
+}
+
+.mesoError {
+  color: #ED2424; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 600; 
+  line-height: 24px; 
+  word-wrap: break-word;
+}
+
+/* media query */
+
+@media only screen and (max-width: 768px) {  
+
+  .colStyle {
+    margin-bottom: 5%;
+  }
+  /* Ime prozvoda(nema u koliko je takos) */
+  .detailDivProductNameStyle {
+    font-size: 36px;
+  }
+  
+  .detailDivProductNameLinija {
+    width: 60px;
+  }
+
+  /* Kartica prozivoda ukoliko nije takos(slika, naziv i cena) */
+  .karticaGlavniDiv {
+    width: 100%; 
+    margin-top: 5%;
+  }
+  
+  .karticaSlika {
+    width: 100%; 
+    height: auto;
+  }
+  
+  .karticaIme {
+    font-size: 18px;
+    margin: 5%;
+  }
+  
+  .karticaCena {
+    text-align: left;
+  }
+  
+  .karticaCenaStyle {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 5%;
+  }
+
+  /* Odaberi meso tekst */
+  .statickiTekstDiv {
+    gap: 8px;
+  }
+
+  .statickiTekst {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .statickiTekstLinija {
+    width: 60px;
+  }
+
+  /* posebni zahtev i narucivanje */
+  textarea {
+    margin-left: 2%;
+    width: 100%;
+  }
+  .posebanZahtevTitle {
+    margin-left: 2%;
+  }
+
+  .poruciGlavniDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ukupnoIKolicinaDiv {
+    align-items: center;
+  }
+
+  .kolicinaLabel {
+    margin-top: 10px;
+  }
+
+  .poruciDugmeDiv {
+    margin-top: 5%;
+  }
+}

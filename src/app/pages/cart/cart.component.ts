@@ -1,4 +1,4 @@
-import {AfterContentChecked, Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterContentChecked, Component, OnDestroy, OnInit, HostListener} from '@angular/core';
 import {CartService} from '../../services/cart.service';
 import {Subject, Subscription} from 'rxjs';
 import {UserService} from '../../services/user.service';
@@ -15,11 +15,19 @@ import {Role} from '../../enum/Role';
 })
 export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
+
+
     constructor(private cartService: CartService,
                 private userService: UserService,
                 private router: Router) {
         this.userSubscription = this.userService.currentUser.subscribe(user => this.currentUser = user);
     }
+
+    isTableLayout: boolean = true;
+    @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkScreenWidth();
+  }
 
     productInOrders = [];
     total = 0;
@@ -40,10 +48,9 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     }
     
     ngOnInit() {
-        
+        this.checkScreenWidth();
         this.cartService.getCart().subscribe(prods => {
             this.productInOrders = prods;
-            //console.log(prods[1].subTotal);
             console.log(this.rowCount + ' ngOninit cart.component.ts');
             
         });
@@ -133,6 +140,11 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     get rowCount(): number {
         return this.productInOrders.length;
     }
+
+    private checkScreenWidth(): void {
+        // Adjust the breakpoint based on your design needs
+        this.isTableLayout = window.innerWidth >= 768;
+      }
 
     
 

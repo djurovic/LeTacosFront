@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+.heading {
+    text-align: center; 
+    color: black; 
+    font-size: 32px; 
+    font-family: Poppins; 
+    font-weight: 700; 
+    line-height: 36px; 
+    word-wrap: break-word;
+}
 
 .list-group-item {
     font-size: 14px;
@@ -13,3 +24,225 @@
     line-height: 24px;
     word-wrap: break-word
 }
+
+/*Placanje dostave i poruci*/
+.glavniDiv {
+    width: 100%;
+    display: flex;
+}
+
+.cenaDostaveGlavni {
+    width: 45%; 
+    margin-left: 2%;
+}
+
+.cenaDostaveDiv {
+    width: 500px;
+    height: 295px; 
+    padding: 24px; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 1px #D7D5D5 solid; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 20px; 
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.ceneDostaveDivHead {
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 24px; 
+    display: flex;
+}
+
+.cenaDostaveDivParagraf {
+    text-align: center; 
+    color: #262626; 
+    font-size: 20px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 30px; 
+    word-wrap: break-word;
+}
+
+.cenaDostaveDivLinija {
+    width: 680px; 
+    height: 0px; 
+    border: 1px #575757 dotted;
+}
+
+.cenaDostaveNaselje {
+    align-self: stretch; 
+    justify-content: space-between; 
+    align-items: center; 
+    display: inline-flex;
+}
+
+.cenaDostaveNaseljeIme {
+    width: 363px; 
+    color: #262626; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+.cenaDostaveNaseljeCena {
+    color: #ED6F24; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+}
+
+.naruciDiv {
+    width: 100%;
+    height: 100%; 
+    padding: 24px; 
+    background: white; 
+    border-radius: 10px; 
+    border: 1px #D7D5D5 solid; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 20px; 
+    display: inline-flex;
+    margin-left: 30px;
+}
+
+.naruciDivInfo {
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 24px; 
+    display: flex;
+}
+
+.naruciDivInfoHeading {
+    text-align: center; 
+    color: #262626; 
+    font-size: 20px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 30px; 
+    word-wrap: break-word;
+}
+
+.naruciDivInfoLinija {
+    width: 430px; 
+    height: 0px; 
+    border: 1px #575757 dotted;
+}
+
+.narucDivParagraf {
+    width: 420px; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+.naruciDivButton {
+    align-self: stretch;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background: #FFF0E1;
+    border-radius: 10px;
+    border: 1px #ED6F24 solid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Add a smooth transition for the background color */
+    cursor: pointer; /* Set cursor to pointer */
+  }
+  
+  .naruciDivButton:hover {
+    background-color: #d8aa8f; /* Darken the background color on hover */
+  }
+  
+  .naruciDivButtonText {
+    color: #ED6F24;
+    font-size: 16px;
+    font-family: Arvo;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+
+  /* Add this media query for responsiveness */
+
+  @media (max-width: 768px) {
+     
+    .heading {
+        width: 100%;
+        font-size: 24px; /* Adjust the font size for smaller screens */
+        line-height: 28px; /* Adjust the line height for smaller screens */
+    }
+
+    .glavniDiv {
+        flex-direction: column;
+    }
+
+    .cenaDostaveGlavni {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 20px; /* Add some space between the two sections */
+    }
+
+    .cenaDostaveDiv {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .cenaDostaveDivLinija {
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    .cenaDostaveNaseljeIme {
+        width: 80%;
+    }
+
+    .cenaDostaveNaseljeCena {
+        font-size: 12px;
+        word-wrap: normal;
+    }
+
+    .naruciDiv {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .naruciDivInfoLinija {
+        border: 1px solid black;
+    }
+
+    .narucDivParagraf {
+        width: 100%;
+        max-width: none; /* Reset the maximum width for smaller screens */
+        white-space: normal; /* Allow the text to wrap on smaller screens */
+        text-overflow: clip; /* Disable text truncation */
+    }
+
+    .naruciDivButton {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .naruciDivInfoLinija {
+        width: 100%;
+    }
+}
+  
+ 
