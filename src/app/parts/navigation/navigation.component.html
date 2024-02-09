@@ -3,41 +3,35 @@
     @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 </style>
 
-<nav class="navbar navbar-custom navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" [routerLink]="root">
-        <img src="/assets/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        LE TACOS
-    </a>
+<nav class="navbar navbar-custom navbar-expand-lg navbar-dark" >
+    <a class="navbar-brand letacos" [routerLink]="root">LE TACOS</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse tekstDiv" id="navbarNav">        
 
-        <div class="navbar-nav" *ngIf="!currentUser || currentUser.role == Role.Customer">
-
-            
-            <a class="nav-item nav-link"
-               routerLink="/kontakt" style="color: white;">
-               Kontakt
-            </a>
-            <a class="nav-item nav-link"
-               routerLink="/oNama" style="color: white;">
+        <div class="navbar-nav ml-auto" >
+            <a  class="nav-item nav-link tekst"
+               routerLink="/oNama" style="color: white">
                O nama
             </a>
-        </div>
-
-        <div class="navbar-nav ml-auto">
+            <a  class="nav-item nav-link tekst" 
+               routerLink="/kontakt" style="color: white">
+               Kontakt
+            </a>
+            <!-- ako ne valja ovako staviti ovaj svg, na o nama i kontakt 1.5rem padding, navbar height 6.625 rem -->
            
             <a *ngIf="!currentUser || currentUser.role == Role.Customer"
-                    class="nav-item nav-link " routerLink="/cart">
-                <i class="fas fa-shopping-cart" style="color: black;"></i>
-                
+                    class="nav-item nav-link korpa" routerLink="/cart">
+                    <!-- img src="assets/ShoppingCart.svg" alt="Cart Icon" class="svgKorpa" /> -->
+                    <i class="fas fa-shopping-cart" style="color: black;"></i>
+                                  
             </a>
 
             <ng-container *ngIf="currentUser; else noUser">
-                <a  *ngIf="currentUser.role !=Role.Customer" class="nav-item nav-link " routerLink="/order">
+                <a  *ngIf="currentUser.role !=Role.Customer" style="color: white;" class="nav-item nav-link " routerLink="/porudzbine">
                     <i class="fas fa-list-ul"></i>
                     Porudzbine
                 </a>
@@ -49,12 +43,7 @@
                 </a>
             </ng-container>
             <ng-template #noUser>
-                <a class="nav-item nav-link " routerLink="/login">
-                    Uloguj se
-                </a>
-                <a class="nav-item nav-link " routerLink="/register">
-                    Registruj se
-                </a>
+               
             </ng-template>
         </div>
     </div>

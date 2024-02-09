@@ -26,6 +26,7 @@ body {
   .right-content {
     display: flex;
     align-items: center;
+    padding-top: 2rem;
   }
 
 

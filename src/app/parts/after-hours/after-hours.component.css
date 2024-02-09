@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+.afterHoursComponent {
+    background-color: #ED6F24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+.glavniDiv {
+    width: 978px; 
+    height: 379px; 
+    padding-left: 32px; 
+    padding-right: 32px; 
+    padding-top: 56px; 
+    padding-bottom: 56px; 
+    background: white; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 24px; 
+    display: inline-flex;
+}
+
+.prviTekstDiv {
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 24px; 
+    display: flex;
+}
+
+.neRadimo {
+    text-align: center; 
+    color: #ED6F24; 
+    font-size: 32px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 48px; 
+    word-wrap: break-word;
+}
+
+.molimo {
+    text-align: center; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+.sat {
+    width: 64px; 
+    height: 64px; 
+    position: relative;
+}
+
+.drugiDiv {
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 12px; 
+    display: flex;
+}
+
+.radnoVremeTekst {
+    text-align: center; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+}
+
+.radnoVremeDiv {
+    justify-content: center; 
+    align-items: center; 
+    gap: 24px; 
+    display: inline-flex;
+}
+
+.ponPetGlavniDiv {
+    padding-left: 24px; 
+    padding-right: 24px; 
+    padding-top: 12px; 
+    padding-bottom: 12px; 
+    background: #FFF0E1; 
+    border-radius: 6px; 
+    border: 1px #ED6F24 solid; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+}
+
+.karticaDiv {
+    justify-content: center; 
+    align-items: center; 
+    gap: 24px; 
+    display: inline-flex;
+}
+
+.satiIDani {
+    text-align: center; 
+    color: #ED6F24; 
+    font-size: 20px; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    line-height: 30px; 
+    word-wrap: break-word;
+}
+
+.subNed {
+    width: 237px; 
+    padding-left: 24px; 
+    padding-right: 24px; 
+    padding-top: 12px; 
+    padding-bottom: 12px; 
+    background: #FFF0E1; 
+    border-radius: 6px; 
+    border: 1px #ED6F24 solid; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+}
+
+@media (max-width: 767px) {
+    .afterHoursComponent {
+        height: 80vh;
+      }
+    .glavniDiv {
+      padding: 16px; /* Adjust padding for smaller screens */
+      height: auto;
+    }
+  
+    .neRadimo {
+      font-size: 24px; /* Adjust font size for smaller screens */
+    }
+  
+    .molimo {
+      font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .radnoVremeDiv {
+        flex-direction: column;
+      }
+  
+    /* Stack elements on mobile */
+    .ponPetGlavniDiv,
+    .subNed {
+      width: 100%; /* Make the width 100% on mobile */
+    }
+  
+    .subNed {
+      margin-top: 16px; /* Add some space between the stacked elements */
+    }
+  
+    /* Add more responsive styles as needed */
+  }

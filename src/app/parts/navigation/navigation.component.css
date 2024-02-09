@@ -8,6 +8,15 @@ body {
   overflow-x: hidden;
 }
 
+.svgKorpa {
+  color: black; 
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0.6rem;
+  background-color: black;
+  border-radius: 0.625rem; 
+}
+
 .navbar-custom {
     background-color: #ED6F24;
     color: white;
@@ -15,12 +24,70 @@ body {
     font-family: Arvo;
     font-weight: 700;
     line-height: 30px;
-    word-wrap: break-word
+    word-wrap: break-word;
 }
+
+.letacos {
+  margin-left:13.75rem;
+}
+
+.tekst {
+  color: white;
+  font-family: Arvo;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  padding-right: 6rem;
+  margin-right: 4rem;
+}
+
+.korpa {
+  margin-right: 13.75rem;
+}
+
+.tekstDiv {
+  margin-left:13.75rem;
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: #ED6F24;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+}
+
 
 @media (max-width: 768px) {
   .navbar {
     width: 100%;
   }
+
+  .letacos {
+    margin-left: 0;
+  }
+
+  .tekst {
+    padding-right: 0;
+  }
+
+  .korpa {
+    margin-right: 0;
+  }
+
+  .tekstDiv {
+    margin-left: 0;
+  }
 }
+
+
 

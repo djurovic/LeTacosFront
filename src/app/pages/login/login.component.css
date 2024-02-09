@@ -13,7 +13,7 @@
 @media (max-width: 767px) {
     
      .formDiv {
-       width: auto;
+       width: 90%;
        margin: auto;
      }
  }

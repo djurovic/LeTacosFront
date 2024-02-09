@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
+.card {
+  border: none;
+}
 /* Ponavljajuci */
 .pocetakReda {
   display: flex; 
@@ -122,15 +125,46 @@
   }
 
   .decrementerIncrementer {
-    color: #ED6F24;
+    /* color: #ED6F24;
     background-color: white;
-    border: 2px #ED6F24 solid;
+    border: 2px #ED6F24 solid; */
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    border: 1px solid var(--Orange, #ED6F24);
+    background: white;
+    color: #ED6F24;
+    font-family: Arvo;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 
-  input {
-    width: 40px;
-    text-align: center;
-  }
+.inputStyle {
+      display: flex;
+      width: 2.3rem;
+      height: 2.1rem;
+      padding: 0.7rem;
+      padding-right: 0;
+      justify-content: center;
+      align-items: center;
+      text-align:center;
+      gap: 0.625rem;
+      border-radius: 0.625rem;
+      border: 1px solid var(--Orange, #ED6F24);
+      background: var(--Subtext-White, #FFF0E1);
+      color: var(--Orange, #ED6F24);
+    
+      /* Body bold */
+      font-family: Poppins;
+      font-size: 0.9rem; /* Adjusted font size */
+}
 
  
 
@@ -167,7 +201,9 @@
 /* Kartica prozivoda ukoliko nije takos */
 .karticaGlavniDiv {
   width: 603px;
-  margin-top: 5%; 
+  margin-top: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .karticaSlika {
@@ -251,26 +287,85 @@
 }
 
 .poruciTextStyle {
-  font-size: 24px; 
+  font-size: 2rem; 
   font-family: Poppins;
 }
 
 .kolicinaLabel {
   margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
+.decrementerIncrementerCount {  
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--Orange, #ED6F24);
+  background: white;
+  color: #ED6F24;
+  font-family: Arvo;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer; /* Change cursor to pointer */
+  margin-right: 2rem;
+}
+
+.inputStyleCount {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  /* padding: 0.7rem; */
+  padding-right: 0;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--Orange, #ED6F24);
+  background: var(--Subtext-White, #FFF0E1);
+  color: var(--Orange, #ED6F24);
+  margin-right: 2rem;
+  /* Body bold */
+  font-family: Poppins;
+  font-size: 1.5rem; /* Adjusted font size */
+}
+
+
 .poruciDugmeDiv {
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-end; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   margin-top: 5%;
 }
 
 .poruciBtn {
-  font-family: Arvo; 
-  color: #ED6F24; 
-  background-color: #FFF0E1; 
-  border: #FFF0E1;
+  font-family: Arvo;
+  font-weight: 700;
+  color: #ED6F24;
+  background-color: #FFF0E1;
+  border: 1px #ED6F24 solid;
+  border-radius: 10px;
+  height: 48px; /* Adjust the height as needed */
+  width: 248px; /* Adjust the width as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 64px; /* Adjust the padding as needed */
+  gap: 10px;
+}
+
+
+.poruciBtn:hover {
+  background-color: #ED6F24;
+  color: white;
 }
 
 .mesoError {
@@ -362,5 +457,14 @@
 
   .poruciDugmeDiv {
     margin-top: 5%;
+  }
+
+  .inputStyle {
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .inputStyleCount {
+    padding: 0;
   }
 }

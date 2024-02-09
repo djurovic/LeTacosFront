@@ -71,14 +71,6 @@ export class DetailComponent implements OnInit {
     this.subTotal=0;
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   // Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-  //   // Add '${implements OnChanges}' to the class.
-  //   console.log(changes);
-  //   if (this.item.quantity in changes) {
-
-  //   }
-  // }
 
   getProduct(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -215,7 +207,7 @@ export class DetailComponent implements OnInit {
 
 
   incrementCount() {
-    if (this.count < 5) { // Max value is 5
+    if (this.count < 99) { // Max value is 99
       this.count++;
     }    
   }

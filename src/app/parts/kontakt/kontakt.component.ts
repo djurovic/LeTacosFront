@@ -12,4 +12,5 @@ export class KontaktComponent implements OnInit {
   ngOnInit() {
   }
 
+  
 }

@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import {AppComponent} from './app.component';
 import {NavigationComponent} from './parts/navigation/navigation.component';
 import {CardComponent} from './pages/card/card.component';
@@ -28,6 +28,9 @@ import { ONamaComponent } from './parts/o-nama/o-nama.component';
 import { AfterHoursComponent } from './parts/after-hours/after-hours.component';
 import { PolitikaPrivatnostiComponent } from './parts/politika-privatnosti/politika-privatnosti.component';
 import { ThankYouComponent } from './parts/thank-you/thank-you.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { SvePorudzbineComponent } from './pages/sve-porudzbine/sve-porudzbine.component';
+import { PorudzbinaComponent } from './pages/porudzbina/porudzbina.component';
 
 @NgModule({
     declarations: [
@@ -52,6 +55,9 @@ import { ThankYouComponent } from './parts/thank-you/thank-you.component';
         AfterHoursComponent,
         PolitikaPrivatnostiComponent,
         ThankYouComponent,
+        CheckOutComponent,
+        SvePorudzbineComponent,
+        PorudzbinaComponent
 
     ],
     imports: [
@@ -59,6 +65,7 @@ import { ThankYouComponent } from './parts/thank-you/thank-you.component';
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
+        ReactiveFormsModule
 
     ],
     providers: [CookieService,

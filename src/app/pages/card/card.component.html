@@ -1,12 +1,50 @@
 <!--  Pocetana slika -->
-<div class="pocetniGlavniDiv">
+<div class="pocetniGlavniDiv hide-on-mobile">
   <img src="assets\card1.png" alt="" class="pocetnaImg">
-  <div class="pocetnaTransform">
+  <div class="pocetnaTransform" style="margin-left: 5rem ;margin-top: 4rem;">
     <div class="pocetnaHeading">Originalni<br> Francuski Tacosi,<br />Novi Sad</div>
     <div class="pocetnaParagraf hide-on-mobile">Otkrijte neodoljivu rapsodiju ukusa koju pružaju naši French Tacosi:
       sočno<br> meso pripremljeno na francuski način, obavijeno u mekanu tortilju i<br> prelivano aromatičnim sosovima.
       Utolite svojim čulima jednim obrokom i<br> istražite vrhunsko gastronomsko iskustvo koje nudimo u samom srcu<br>
-      Novog Sada.</div>
+      Novog Sada.</div><br>
+
+      <div class="poruciPrvo">
+        <a (click)="scrollToSection()" style="margin-top: 2rem;">
+          <button type="button" class="btnPoruci">
+            <div class="btnPoruciText">Poruči</div>
+          </button>
+        </a>
+      </div>
+
+      <!-- <div class="btnDivOnama">
+        <a (click)="scrollToSection()" >
+          <div class="button-cust">
+            <div class="btnTextOnama">
+              Poruči</div>
+          </div>
+        </a>
+      </div> -->
+  </div>
+
+</div>
+
+<!-- Mobile -->
+
+<div class="hide-on-normal ">
+  <div class="pocetnaMobileWrapper">
+    <div class="pocetnaHeadingMobile">Originalni<br> Francuski Tacosi,<br>Novi Sad</div>
+    <div class="pocetnaTekstMobile"><p>Otkrijte neodoljivu rapsodiju ukusa koju<br> pružaju naši French Tacosi: sočno meso<br> pripremljeno na francuski način, obavijeno u<br> mekanu tortilju i prelivano aromatičnim<br> sosovima. Utolite svojim čulima jednim<br> obrokom i istražite vrhunsko gastronomsko<br> iskustvo koje nudimo u samom srcu<br> Novog Sada.</p></div>
+    
+    <div class="btnDivOnama">
+      <a (click)="scrollToSection()" >
+        <div class="button-cust">
+          <div class="btnTextOnama">
+            Poruči</div>
+        </div>
+      </a>
+    </div>
+
+
   </div>
 </div>
 
@@ -203,9 +241,12 @@
         uživate u pravom duhu ovog voljenog francuskog specijaliteta u Novom Sadu. Vaše zadovoljstvo je naša najveća
         motivacija i ponosimo se pružanjem svetskog gastronomskog iskustva koje odražava duh i inspiraciju Le
         Tacosa..<br /></div>
-      <a routerLink="/oNama" class="oNamaAncor">
-        <button type="button" class="btn oNamaBtn">O nama</button>
-      </a>
+          <a class="btnDivOnama" routerLink="/oNama" >
+            <div class="button-cust">
+              <div class="btnTextOnama">
+                O nama</div>
+            </div>
+          </a>
     </div>
   </div>
   <div class="col-md-6">
@@ -222,7 +263,11 @@
     <div class="poruciLinija"></div>
     <div class="poruciParagraf">Donesi ukus Francuske u udobnost svog doma.</div>
   </div>
-  <a (click)="scrollToSection()" class="poruciLink">
-    <button type="button" class="btn poruciBtn">Poruči</button>
-  </a>
+  
+    <a class="btnDiv" (click)="scrollToSection()" >
+      <div class="button-cust">
+        <div class="btnText">
+          Poruči</div>
+      </div>
+    </a>
 </div>

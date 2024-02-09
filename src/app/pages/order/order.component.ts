@@ -74,9 +74,7 @@ export class OrderComponent implements OnInit, OnDestroy {
             }
         })
     }
-    refreshPage() {
-        location.reload();
-    }
+    
 
     ngOnDestroy(): void {
         this.querySub.unsubscribe();

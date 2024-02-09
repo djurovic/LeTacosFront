@@ -26,130 +26,14 @@
 }
 
 /*Placanje dostave i poruci*/
-.glavniDiv {
-    width: 100%;
+.orderSummary {
     display: flex;
-}
-
-.cenaDostaveGlavni {
-    width: 45%; 
-    margin-left: 2%;
-}
-
-.cenaDostaveDiv {
-    width: 500px;
-    height: 295px; 
-    padding: 24px; 
-    border-radius: 10px; 
-    overflow: hidden; 
-    border: 1px #D7D5D5 solid; 
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 20px; 
-    display: inline-flex;
-    margin-right: 10px;
-}
-
-.ceneDostaveDivHead {
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 24px; 
-    display: flex;
-}
-
-.cenaDostaveDivParagraf {
-    text-align: center; 
-    color: #262626; 
-    font-size: 20px; 
-    font-family: Arvo; 
-    font-weight: 700; 
-    line-height: 30px; 
-    word-wrap: break-word;
-}
-
-.cenaDostaveDivLinija {
-    width: 680px; 
-    height: 0px; 
-    border: 1px #575757 dotted;
-}
-
-.cenaDostaveNaselje {
-    align-self: stretch; 
-    justify-content: space-between; 
-    align-items: center; 
-    display: inline-flex;
-}
-
-.cenaDostaveNaseljeIme {
-    width: 363px; 
-    color: #262626; 
-    font-size: 16px; 
-    font-family: Poppins; 
-    font-weight: 400; 
-    line-height: 32px; 
-    word-wrap: break-word;
-}
-
-.cenaDostaveNaseljeCena {
-    color: #ED6F24; 
-    font-size: 16px; 
-    font-family: Poppins; 
-    font-weight: 600; 
-    line-height: 24px; 
-    word-wrap: break-word;
-}
-
-.naruciDiv {
-    width: 100%;
-    height: 100%; 
-    padding: 24px; 
-    background: white; 
-    border-radius: 10px; 
-    border: 1px #D7D5D5 solid; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 20px; 
-    display: inline-flex;
-    margin-left: 30px;
-}
-
-.naruciDivInfo {
-    flex-direction: column; 
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    gap: 24px; 
-    display: flex;
-}
-
-.naruciDivInfoHeading {
-    text-align: center; 
-    color: #262626; 
-    font-size: 20px; 
-    font-family: Arvo; 
-    font-weight: 700; 
-    line-height: 30px; 
-    word-wrap: break-word;
-}
-
-.naruciDivInfoLinija {
-    width: 430px; 
-    height: 0px; 
-    border: 1px #575757 dotted;
-}
-
-.narucDivParagraf {
-    width: 420px; 
-    color: #575757; 
-    font-size: 16px; 
-    font-family: Poppins; 
-    font-weight: 400; 
-    line-height: 32px; 
-    word-wrap: break-word;
-}
-
+    align-items: center;
+  }
+  
+  .float-start {
+    margin-right: 750px; /* Adjust the margin as needed */
+  }
 .naruciDivButton {
     align-self: stretch;
     padding-left: 64px;
@@ -164,23 +48,254 @@
     gap: 10px;
     display: inline-flex;
     text-decoration: none;
-    transition: background-color 0.3s; /* Add a smooth transition for the background color */
+    
     cursor: pointer; /* Set cursor to pointer */
-  }
+  } 
   
-  .naruciDivButton:hover {
-    background-color: #d8aa8f; /* Darken the background color on hover */
-  }
+  .naruciDivButton:hover,
+  .naruciDivButton:hover .naruciDivButtonText {
+  background-color: #ED6F24;
+  color: white;
+}
+  
   
   .naruciDivButtonText {
     color: #ED6F24;
     font-size: 16px;
-    font-family: Arvo;
+    font-family: Arvo, sans-serif;
     font-weight: 700;
     word-wrap: break-word;
+    
   }
 
-  /* Add this media query for responsiveness */
+  .decrementerIncrementer {
+    /* color: #ED6F24;
+    background-color: white;
+    border: 2px #ED6F24 solid; */
+    display: flex;
+    width: 1rem;
+    height: 1rem;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    border: 1px solid var(--Orange, #ED6F24);
+    background: white;
+    color: #ED6F24;
+    font-family: Arvo;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .inputStyle {
+    display: flex;
+    width: 2.3rem;
+    height: 2.1rem;
+    padding: 0.7rem;
+    padding-right: 0;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    gap: 0.625rem;
+    border-radius: 0.625rem;
+    border: 1px solid var(--Orange, #ED6F24);
+    background: var(--Subtext-White, #FFF0E1);
+    color: var(--Orange, #ED6F24);
+  
+    /* Body bold */
+    font-family: Poppins;
+    font-size: 0.9rem; /* Adjusted font size */
+}
+
+/* Novi mob */
+
+.frame246 {
+    /* Frame 246 */
+    width:100%;
+    height:auto;
+    padding:2rem;
+    gap:2rem; 
+    background-color: #262626; 
+    border-bottom: 1px solid #FBFBFB;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.vasaPorudzbinaTekst {
+  font-family: Arvo, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center; 
+  color: white;
+}
+
+.glavniDivProizvodi {
+  width:100%;
+  height:auto; 
+  padding:2rem;
+  gap:2rem; 
+  background-color: #262626; 
+  border-bottom: 1px solid #FBFBFB;
+}
+
+.proizvodiRow {
+  margin-bottom: 10px; 
+  border-bottom: 1px dotted #FBFBFB;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.proizvodSlika {
+  width: 82px; 
+  height: 65px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 20%;
+}
+
+.proizvodIme {
+  text-align: left; 
+  color: white;
+}
+
+.proizvodAkcijeGlavniDiv {
+  justify-content: space-between; 
+  align-items: flex-end; 
+  margin-top: 6px; 
+  display: flex;
+}
+
+.poruciGlavniDiv {
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #262626;
+  border-bottom: 1px solid #FBFBFB;
+}
+
+.poruciH4 {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.proizvodiRow:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.proizvodiRow:first-child {
+  padding-top: 0;
+}
+
+.dodaciDiv {
+  display: flex;
+  justify-content: space-between; 
+  padding-bottom: 6px; 
+  font-family: Poppins; 
+  font-size: 12px;
+}
+
+.dodatakTekst {
+  color: white; 
+  text-align: left;
+}
+
+.dodatakBorder {
+  border-bottom: 1px dotted white; 
+  width: 100%;
+  margin-bottom: 5px; 
+}
+
+.dodatakNaziv {
+  color: white; 
+  text-align: right;
+}
+
+.decrementerIncrementerMob {  
+  display: flex;
+  width: 12px;
+  height: 12px;
+  padding: 14px 14px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--Orange, #ED6F24);
+  background: transparent;
+  color: #ED6F24;
+  font-family: Arvo;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.inputStyleMob {
+  display: flex;
+  width: 2rem;
+  height: 1.95rem;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--Orange, #ED6F24);
+  background: white;
+  color: var(--Orange, #ED6F24);
+
+  /* Body bold */
+  font-family: Poppins;
+  font-size: 0.9rem; /* Adjusted font size */
+}
+
+.naruciDivButtonMob {
+  align-self: stretch;
+  padding-left: 36px;
+  padding-right: 36px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: #FFF0E1;
+  border-radius: 10px;
+  border: 1px #ED6F24 solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  text-decoration: none;
+  
+  cursor: pointer; /* Set cursor to pointer */
+}
+
+.naruciDivButtonTextMob {
+  color: #ED6F24;
+  font-size: 14px;
+  font-family: Arvo, sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  
+}
+
+/* Add this media query for responsiveness */
 
   @media (max-width: 768px) {
      
@@ -190,34 +305,7 @@
         line-height: 28px; /* Adjust the line height for smaller screens */
     }
 
-    .glavniDiv {
-        flex-direction: column;
-    }
-
-    .cenaDostaveGlavni {
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 20px; /* Add some space between the two sections */
-    }
-
-    .cenaDostaveDiv {
-        width: 100%;
-        margin-right: 0;
-    }
-
-    .cenaDostaveDivLinija {
-        width: 100%;
-        border: 1px solid black;
-    }
-
-    .cenaDostaveNaseljeIme {
-        width: 80%;
-    }
-
-    .cenaDostaveNaseljeCena {
-        font-size: 12px;
-        word-wrap: normal;
-    }
+    
 
     .naruciDiv {
         width: 100%;
@@ -235,10 +323,10 @@
         text-overflow: clip; /* Disable text truncation */
     }
 
-    .naruciDivButton {
+    /* .naruciDivButton {
         padding-left: 20px;
         padding-right: 20px;
-    }
+    } */
 
     .naruciDivInfoLinija {
         width: 100%;

@@ -18,6 +18,11 @@ import { ONamaComponent } from './parts/o-nama/o-nama.component';
 import { KontaktComponent } from './parts/kontakt/kontakt.component';
 import { PolitikaPrivatnostiComponent } from './parts/politika-privatnosti/politika-privatnosti.component';
 import { ThankYouComponent } from './parts/thank-you/thank-you.component';
+import { AfterHoursComponent } from './parts/after-hours/after-hours.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { SvePorudzbineComponent } from './pages/sve-porudzbine/sve-porudzbine.component';
+import { PorudzbinaService } from './services/porudzbina.service';
+import { PorudzbinaComponent } from './pages/porudzbina/porudzbina.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/product', pathMatch: 'full'},
@@ -33,6 +38,9 @@ const routes: Routes = [
     {path: 'order/:id', component: OrderDetailComponent, canActivate: [AuthGuard], data: {roles: [Role.Manager, Role.Employee]}},
     {path: 'order', component: OrderComponent, canActivate: [AuthGuard], data: {roles: [Role.Manager, Role.Employee]}},
     {path: 'seller', redirectTo: 'seller/product', pathMatch: 'full'},
+    {path: 'check-out', component: CheckOutComponent},
+    {path: 'porudzbine', component: SvePorudzbineComponent},
+    {path: 'porudzbina/:id', component: PorudzbinaComponent},
     {
         path: 'seller/product',
         component: ProductListComponent,
@@ -61,7 +69,10 @@ const routes: Routes = [
     {path: 'kontakt', component:KontaktComponent},
     {path: 'politikaPrivatnosti', component:PolitikaPrivatnostiComponent},
     {path: 'thankYou', component:ThankYouComponent},
+    {path: 'after', component:AfterHoursComponent},
     {path: '**', pathMatch: 'full', component:PageNotFoundComponent}
+    
+    
 
 ];
 

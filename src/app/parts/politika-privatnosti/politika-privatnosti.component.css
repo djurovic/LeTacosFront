@@ -1,0 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+    font-family: 'Arvo'; /* Give your font a name */
+    src: url('../../../assets/Fonts/arvo/Arvo-Regular.ttf') format('truetype');
+  }
+
+.prikupljanje {
+    width: 100%;
+    color: #262626;
+    font-size: 32px;
+    font-family: Arvo, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase; 
+    line-height: 48px; 
+    word-wrap: break-word;
+}

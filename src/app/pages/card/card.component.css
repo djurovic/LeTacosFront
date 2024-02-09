@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+
 /*Prethodno*/
+button {
+  outline: none;
+}
 a {
     color: inherit;
 }
@@ -10,6 +15,15 @@ a:hover {
 
 #sel:hover {
     border: 1px #ED6F24 solid; border-radius: 10px; overflow: hidden;
+}
+
+.hide-on-normal {
+  display: none;
+  background-image: url('../../../assets/pocetnaMobile2.png'); 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 848px;
 }
 
 /* Staticki html i css */
@@ -35,19 +49,30 @@ a:hover {
     text-align: left; 
     color: white; 
     font-size: 24px; 
-    font-family: Arvo; 
+    font-family: Arvo, sans-serif; 
     font-weight: 700; 
     line-height: 1.2; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .pocetnaHeading {
-    font-size: 80px;
-    line-height: 120px;
+  width: 853px; 
+  color: white; 
+  font-size: 80px; 
+  font-family: Arvo; 
+  font-weight: 700; 
+  line-height: 120px; 
+  word-wrap: break-word;
 }
 
 .pocetnaParagraf {
-    font-size: 16px;
+  width: 602.79px;
+  color: #FFF0E1; 
+  font-size: 16px; 
+  font-family: Poppins; 
+  font-weight: 400; 
+  line-height: 32px; 
+  word-wrap: break-word;
 }
 
 /* Uvodni tekst za takose */
@@ -65,7 +90,7 @@ a:hover {
     text-align: center; 
     color: #262626; 
     font-size: 48px; 
-    font-family: Arvo; 
+    font-family: 'Arvo', sans-serif; 
     font-weight: 700; 
     line-height: 72px; 
     word-wrap: break-word;
@@ -104,7 +129,7 @@ a:hover {
   text-align: center; 
   color: #262626; 
   font-size: 48px; 
-  font-family: Arvo; 
+  font-family: Arvo, sans-serif; 
   font-weight: 700; 
   line-height: 72px; 
   word-wrap: break-word;
@@ -142,7 +167,7 @@ a:hover {
   text-align: center; 
   color: #262626; 
   font-size: 48px; 
-  font-family: Arvo; 
+  font-family: Arvo, sans-serif; 
   font-weight: 700; 
   line-height: 72px; 
   word-wrap: break-word;
@@ -193,7 +218,7 @@ a:hover {
     text-align: center;
     color: white;
     font-size: 48px; 
-    font-family: Arvo; 
+    font-family: Arvo, sans-serif; 
     font-weight: 700; 
     line-height: 72px; 
     word-wrap: break-word;
@@ -340,7 +365,7 @@ a:hover {
 .oNamaHeading {
     color: #262626; 
     font-size: 48px; 
-    font-family: Arvo; 
+    font-family: Arvo, sans-serif; 
     font-weight: 700; 
     line-height: 72px; 
     word-wrap: break-word;
@@ -364,7 +389,7 @@ a:hover {
 
 .oNamaAncor {
     text-decoration: none; 
-    font-family: Arvo;
+    font-family: Arvo, sans-serif;
 }
 
 .oNamaBtn {
@@ -414,7 +439,7 @@ a:hover {
     text-align: center; 
     color: white; 
     font-size: 48px; 
-    font-family: Arvo; 
+    font-family: Arvo, sans-serif; 
     font-weight: 700; 
     line-height: 72px; 
     word-wrap: break-word;
@@ -439,20 +464,131 @@ a:hover {
 
 .poruciLink {
     text-decoration: none;
-    font-family: Arvo;
+    font-family: Arvo, sans-serif;
 }
 
-.poruciBtn {
-    background-color: #FFF0E1; 
-    color: #ED6F24; 
-    border: none; 
-    padding: 10px 20px; 
-    cursor: pointer;
+.btnDiv {  
+  width: 184px; 
+  height: 48px; 
+  padding-left: 64px; 
+  padding-right: 64px; 
+  padding-top: 14px; 
+  padding-bottom: 14px; 
+  background: rgba(255, 255, 255, 0.20); 
+  border-radius: 10px; 
+  border: 1px solid var(--White, #FFF);; 
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 10px; 
+  display: inline-flex;
 }
 
-.poruciBtn:hover {
-    background-color: #d8aa8f; /* Darken the background color on hover */
+a {
+  text-decoration: none; 
+  color: inherit; 
+  display: block;
 }
+
+
+
+.btnText {    
+  
+  color: white; 
+  font-size: 16px; 
+  font-family: Arvo, sans-serif; 
+  font-weight: 700; 
+  word-wrap: break-word;
+}
+
+
+
+
+.btnDiv:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--Orange, #ED6F24);
+  background: white;
+  cursor: pointer;
+}
+
+.btnDiv:hover .btnText {
+  color: #ED6F24;
+}
+
+
+.btnDivOnama {  
+  width: 184px; 
+  height: 48px; 
+  padding-left: 60px; 
+  padding-right: 55px; 
+  padding-top: 14px; 
+  padding-bottom: 14px; 
+  border-radius: 0.625rem;
+  border: 1px solid var(--Orange, #ED6F24);
+  background: var(--Subtext-White, #FFF0E1);
+  justify-content: flex-start; 
+  align-items: center; 
+  gap: 0.625rem;
+  display: inline-flex;
+}
+
+.btnTextOnama {    
+  
+  color: #ED6F24; 
+  font-size: 16px; 
+  font-family: Arvo, sans-serif; 
+  font-weight: 700;
+  display: inline-flex; 
+  word-wrap: break-word;
+}
+
+.btnDivOnama:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--Orange, #ED6F24);
+  background: #ED6F24;
+}
+
+.btnDivOnama:hover .btnTextOnama {
+  color: white;
+}
+
+/* Btn poruci na pocetku */
+.btnPoruci {
+  width: 184px; 
+  height: 48px; 
+  padding-left: 64px; 
+  padding-right: 64px; 
+  padding-top: 14px; 
+  padding-bottom: 14px; 
+  background: #FFF0E1; 
+  border-radius: 10px; 
+  border: 1px #ED6F24 solid; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  gap: 10px; 
+  display: inline-flex; 
+  outline: none;
+  color: #ED6F24;
+}
+
+.btnPoruci:hover {
+  border: 1px white solid;
+}
+
+.btnPoruci:hover,
+.btnPoruci:hover .btnPoruciText {
+  background-color: #ED6F24; /* Change to the desired hover background color */
+  color: #FFFFFF !important; /* Set the text color for hover state */
+  cursor: pointer;
+}
+
+.btnPoruciText {
+  color: #ED6F24; 
+  font-size: 16px; 
+  font-family: 'Arvo', sans-serif; 
+  font-weight: 700; 
+  word-wrap: break-word;
+}
+
 
 
 
@@ -476,7 +612,7 @@ a:hover {
   justify-content: flex-start; 
   align-items: center; 
   display: inline-flex; 
-  padding: 10px;
+  padding: 0px;
 }
 
 .cardImgDiv {
@@ -510,7 +646,7 @@ a:hover {
 /* Ovo sredi u media query */
 .cardNameStyle {
   text-align: left;
-  font-family: Arvo;
+  font-family: Arvo, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -522,7 +658,7 @@ a:hover {
   color: #ED6F24;
   font-weight: 700; 
   font-size: 24px; 
-  font-family: Arvo; 
+  font-family: Arvo, sans-serif; 
   line-height: 30px; 
   word-wrap: break-word;
 }
@@ -544,7 +680,7 @@ a:hover {
 .offBlockTekst {
   color: white;
   font-size: 20px;
-  font-family: Arvo;
+  font-family: Arvo, sans-serif;
   font-weight: 700;
   text-align: center;
 }
@@ -595,8 +731,59 @@ a:hover {
   }
 
   .pocetnaImg {
-      width: 100%;
+      width: 100%;      
   }
+
+  /* pocetna div za mobile */
+
+  .pocetnaMobileGlavniDiv {
+    display: block;
+    text-align: left; /* Optional: Center the image on smaller screens */
+ 
+  }
+
+  
+
+  .pocetnaMobileWrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5rem;
+}
+
+.pocetnaHeadingMobile {
+    color: var(--White, var(--White, #FFF));
+    font-family: Arvo;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    font-size: 2rem;
+    
+  }
+
+  .pocetnaTekstMobile {
+    color: var(--Subtext-White, #FFF0E1);
+
+    /* Body */
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%; /* 2rem */
+    align-self: stretch;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    word-wrap: break-word; /* Allow long words to break and wrap onto the next line (for older browsers) */
+    overflow-wrap: break-word; /* Modern approach to allow words to break */
+    word-break: break-all;
+  }
+
+
+
+.overlay-content {
+    text-align: center; /* Center the content inside overlay-content */
+}
+
 
   /* Uvodni tekst za takose */
   .uvodniTextTakosiDiv {
@@ -753,6 +940,10 @@ a:hover {
   /* Ovo sredu u media query */
   .cardPriceStyle {
     font-size: 15px;
+  }
+
+  .hide-on-normal {
+    display: block;
   }
 
   

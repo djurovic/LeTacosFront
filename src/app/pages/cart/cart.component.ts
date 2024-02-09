@@ -25,13 +25,12 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
     isTableLayout: boolean = true;
     @HostListener('window:resize', ['$event'])
-  onResize(event: Event): void {
+    onResize(event: Event): void {
     this.checkScreenWidth();
   }
 
     productInOrders = [];
     total = 0;
-    total2=0;
     currentUser: JwtResponse;
     userSubscription: Subscription;
 
@@ -87,6 +86,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     }
 
     addOne(productInOrder) {
+        const subtotal = productInOrder.subTotal/productInOrder.count;
         if(productInOrder.count < 5) {
             productInOrder.count++;
         CartComponent.validateCount(productInOrder);
@@ -94,12 +94,16 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
         if (this.currentUser) { this.updateTerms.next(productInOrder); }
         }
         
+        
+        productInOrder.subTotal=subtotal*productInOrder.count;
     }
 
     minusOne(productInOrder) {
+        const subtotal = productInOrder.subTotal/productInOrder.count;
         productInOrder.count--;
         CartComponent.validateCount(productInOrder);
         if (this.currentUser) { this.updateTerms.next(productInOrder); }
+        productInOrder.subTotal=subtotal*productInOrder.count;
     }
 
     onChange(productInOrder) {
@@ -119,7 +123,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     }
 
     checkout() {
-        if (!this.currentUser) {
+        /* if (!this.currentUser) {
             this.router.navigate(['/login'], {queryParams: {returnUrl: this.router.url}});
         } else if (this.currentUser.role !== Role.Customer) {
             this.router.navigate(['/seller']);
@@ -134,7 +138,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
                 });
             this.router.navigate(['/thankYou']);
         }
-
+ */     this.router.navigate(['/check-out']);
     }
 
     get rowCount(): number {

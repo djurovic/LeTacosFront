@@ -11,7 +11,7 @@
     <div class="card mb-4 ">
 
       <!-- Kartica ukoliko nije takos -->
-      <div class="card mb-4 mx-auto karticaGlavniDiv" *ngIf="productInfo.categoryType!=0">
+      <div style="margin-bottom: 0;" class="card mb-4 mx-auto karticaGlavniDiv" *ngIf="productInfo.categoryType!=0">
         <img class="card-img-top karticaSlika" src="{{productInfo?.productIcon}}"
           *ngIf="productInfo.categoryType!=0">
         <div class="row">
@@ -43,12 +43,14 @@
         </div>
 
         <!-- Pocetak forme -->
-        <form name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && addToCart()">
+        <form class="frm" name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && addToCart()">
           <div class="text-left">
             <input hidden name="productId" [value]=productInfo?.productId>
             <br>
 
             <!-- Meso -->
+            <div *ngIf="productInfo.categoryType!=2">
+            <div *ngIf="productInfo.categoryType==0">
             <div class="pocetakReda row" *ngIf="productInfo.categoryType==0">
               <!-- Piletina -->
               <div class="colStyle">
@@ -58,7 +60,7 @@
                     <div class="colInfoNaziv">Marinirana piletina</div>
                     <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementPiletina()">-</button>
-                      <input [(ngModel)]="mariniranaPiletina" (ngModelChange)="updateSumMesa()" type="number"
+                      <input class="inputStyle" [(ngModel)]="mariniranaPiletina" (ngModelChange)="updateSumMesa()" type="number"
                         name="mariniranaPiletina" required min="0" max="3" readonly>
                       <button type="button" class="decrementerIncrementer" (click)="incrementPiletina()">+</button>
                     </div>
@@ -73,7 +75,7 @@
                     <div class="colInfoNaziv">Mlevena junetina</div>
                     <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementJunetina()">-</button>
-                      <input [(ngModel)]="mlevenaJunetina" (ngModelChange)="updateSumMesa()" type="number"
+                      <input class="inputStyle" [(ngModel)]="mlevenaJunetina" (ngModelChange)="updateSumMesa()" type="number"
                         name="mlevenaJunetina" required min="0" max="3" readonly>
                       <button type="button" class="decrementerIncrementer" (click)="incrementJunetina()">+</button>
                     </div>
@@ -89,7 +91,7 @@
                     <div class="colInfoNaziv">Rostilj kobasica</div>
                     <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementKobasica()">-</button>
-                      <input [(ngModel)]="rostiljKobasica" (ngModelChange)="updateSumMesa()" type="number"
+                      <input class="inputStyle" [(ngModel)]="rostiljKobasica" (ngModelChange)="updateSumMesa()" type="number"
                         name="rostiljKobasica" required min="0" max="3" readonly>
                       <button type="button" class="decrementerIncrementer" (click)="incrementKobasica()">+</button>
                     </div>
@@ -108,7 +110,7 @@
                     <div class="colInfoNaziv">Chicken nuggets</div>
                     <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementNuggets()">-</button>
-                      <input [(ngModel)]="chickenNugets" (ngModelChange)="updateSumMesa()" type="number"
+                      <input class="inputStyle" [(ngModel)]="chickenNugets" (ngModelChange)="updateSumMesa()" type="number"
                         name="chickenNugets" required min="0" max="3" readonly>
                       <button type="button" class="decrementerIncrementer" (click)="incrementNuggets()">+</button>
                     </div>
@@ -123,7 +125,7 @@
                     <div class="colInfoNaziv">Cordon bleu</div>
                     <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementCordon()">-</button>
-                      <input [(ngModel)]="cordonBleu" (ngModelChange)="updateSumMesa()" type="number" name="cordonBleu"
+                      <input class="inputStyle" [(ngModel)]="cordonBleu" (ngModelChange)="updateSumMesa()" type="number" name="cordonBleu"
                         required min="0" max="3" readonly>
                       <button type="button" class="decrementerIncrementer" (click)="incrementCordon()">+</button>
                     </div>
@@ -138,13 +140,14 @@
                     <div class="colInfoNaziv">Falafel</div>
                     <div class="colInfoAction">
                       <button type="button" class="decrementerIncrementer" (click)="decrementFalafel()">-</button>
-                      <input [(ngModel)]="falafel" (ngModelChange)="updateSumMesa()" type="number" name="falafel"
+                      <input class="inputStyle" [(ngModel)]="falafel" (ngModelChange)="updateSumMesa()" type="number" name="falafel"
                         required min="0" max="3" readonly>
                       <button type="button" class="decrementerIncrementer" (click)="incrementFalafel()">+</button>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
             </div>
             <br>
             <div *ngIf="productInfo.productId == 'T0001'" class="mesoGreska">*Odaberi meso</div>
@@ -299,6 +302,7 @@
             </div>
             <br><br>
             <!-- Prvi red extra sosa -->
+            <div *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
             <div class="pocetakReda row"
               *ngIf="productInfo.categoryType != 2 && productInfo.categoryType != 1">
               <!-- Extra sos ninja blend -->
@@ -610,6 +614,8 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
             <!-- Kraj cetvrtog reda extra dodaci -->
             <!-- Kraj ekstra dodaci -->
             <br><br><br><br>
@@ -624,11 +630,10 @@
                     <label id="subtotal" class="poruciTextStyle">{{calculateSubtotal()}} Din</label>
                   </label>
                   <label class="card-text kolicinaLabel">
-                    <strong class="poruciTextStyle">Kolicina: </strong>
-                    <button type="button" class="decrementerIncrementer" (click)="decrementCount()">-</button>
-                    <input [(ngModel)]="count" (change)="validateCount()" type="number" name="count" required min="1"
-                      max="5" readonly>
-                    <button type="button" class="decrementerIncrementer" (click)="incrementCount()">+</button>
+                    <button type="button" class="decrementerIncrementerCount" (click)="decrementCount()">-</button>
+                    <input class="inputStyleCount" [(ngModel)]="count" (change)="validateCount()" type="number" name="count" required min="1"
+                      max="99" readonly>
+                    <button type="button" class="decrementerIncrementerCount" (click)="incrementCount()">+</button>
                   </label>
                 </div>
                 <div class="poruciDugmeDiv">
