@@ -1,0 +1,303 @@
+<div *ngIf="mobileLayout" class="container mt-4">
+  <form (ngSubmit)="onSubmit()" [formGroup]="checkoutForm">
+  <div class="row">
+    <div class="col-7" style="">
+      <div style="border-radius: 10px; border: 1px #D7D5D5 solid; padding: 1.5rem;">
+      <div class="header2">
+        <h2>Podaci za dostavu</h2>
+      </div>
+      
+        <!-- Pocetak forme za unos podataka -->
+        <!-- Ime prezime -->
+        <div class="row" style="margin-bottom: 1rem;">
+        <div class="mb-3 col">
+          <label for="kupacIme" class="form-label tekstForma">Ime<span style="color: red;">*</span></label>
+          <input type="text" id="kupacIme" name="kupacIme" class="form-control" required formControlName="kupacIme"
+            [(ngModel)]="porudzbina.kupacIme">
+        </div>
+    
+        <div class="mb-3 col">
+          <label for="kupacPrezime" class="form-label tekstForma">Prezime<span style="color: red;">*</span></label>
+          <input type="text" id="kupacPrezime" name="kupacPrezime" class="form-control" required
+            formControlName="kupacPrezime" [(ngModel)]="porudzbina.kupacPrezime">
+        </div>
+        </div>
+        <!-- Ulica i broj -->
+        <div class="row">
+        <div class="mb-3 col-9">
+          <label for="kupacUlica" class="form-label tekstForma">Ulica<span style="color: red;">*</span></label>
+          <input type="text" id="kupacUlica" name="kupacUlica" class="form-control" required formControlName="kupacUlica"
+            [(ngModel)]="porudzbina.kupacUlica">
+        </div>
+    
+        <div class="mb-3 col-3">
+          <label for="kupacBroj" class="form-label tekstForma">Broj<span style="color: red;">*</span></label>
+          <input type="text" id="kupacBroj" name="kupacBroj" class="form-control" required formControlName="kupacBroj"
+            [(ngModel)]="porudzbina.kupacBroj">
+        </div>
+        </div>
+        <!-- Interfon, stan, sprat -->
+        <div class="row">
+        <div class="mb-3 col-6">
+          <label for="kupacInterfon" class="form-label tekstForma">Interfon</label>
+          <input type="text" id="kupacInterfon" name="kupacInterfon" class="form-control" formControlName="kupacInterfon"
+            [(ngModel)]="porudzbina.kupacInterfon">
+        </div>
+    
+        <div class="mb-3 col-3">
+          <label for="kupacBrojStana" class="form-label tekstForma">Broj stana</label>
+          <input type="text" id="kupacBrojStana" name="kupacBrojStana" class="form-control" formControlName="kupacBrojStana"
+            [(ngModel)]="porudzbina.kupacBrojStana">
+        </div>
+    
+        <div class="mb-3 col-3">
+          <label for="kupacSprat" class="form-label tekstForma">Sprat</label>
+          <input type="text" id="kupacSprat" name="kupacSprat" class="form-control" formControlName="kupacSprat"
+            [(ngModel)]="porudzbina.kupacSprat">
+        </div>
+        </div>
+
+
+        <div class="mb-3">
+          <label for="kupacTelefon" class="form-label tekstForma">Telefon<span style="color: red;">*</span></label>
+          <input type="text" id="kupacTelefon" name="kupacTelefon" class="form-control" required
+            formControlName="kupacTelefon" [(ngModel)]="porudzbina.kupacTelefon">
+        </div>
+    
+        <div class="mb-3">
+          <label for="kupacEmail" class="form-label tekstForma">Email<span style="color: red;">*</span></label>
+          <input type="email" id="kupacEmail" name="kupacEmail" class="form-control" required formControlName="kupacEmail"
+            [(ngModel)]="porudzbina.kupacEmail">
+        </div>
+    
+        <div class="mb-3">
+          <label for="posebanZahtev" class="form-label tekstForma">Posebne napomene za dostavu</label>
+          <input type="text" id="posebanZahtev" name="posebanZahtev" class="form-control" formControlName="posebanZahtev"
+            [(ngModel)]="porudzbina.posebanZahtev">
+        </div>
+      </div>
+        <div class="cenaDostaveGlavniDivMob">
+          <div class="cenaDostaveTextDivMob">
+            <div class="cenaDostaveTextMob">Cena dostave</div>
+            <!-- <div style="width: 100%; height: 0px; border: 1px #575757 dotted"></div> -->
+          </div>
+          <div class="naseljaDivMob">
+            <div class="naseljeImeMob">Podbara</div>
+            <div class="naseljeCenaMob">+300 rsd</div>
+          </div>
+          <div class="naseljaDivMob">
+            <div class="naseljeImeMob">Liman 1,2,3,4</div>
+            <div class="naseljeCenaMob">+300 rsd</div>
+          </div>
+          <div class="naseljaDivMob">
+            <div class="naseljeImeMob">Centar</div>
+            <div class="naseljeCenaMob">+300 rsd</div>
+          </div>
+          <div class="naseljaDivMob">
+            <div class="naseljeImeMob">Stari Grad</div>
+            <div class="naseljeCenaMob">+300 rsd</div>
+          </div>
+        </div>      
+    </div>
+    <div class="col-4">
+      <div class="porudzbinaGlavniDivMob">
+        <div class="vasaPorudzbinaDivMob">
+          <div class="vasaPorudzbinaTextMob">Vaša porudžbina</div>
+        </div>
+        <div class="porudzbinaProductGlavniDivMob" *ngFor="let product of porudzbina.proizvodi">
+          <div class="productImeMob">{{product.productName}}</div>
+          <div class="dodaciMob" *ngIf="product.mariniranaPiletina>0">Meso: Marinirana piletina</div>
+          <div class="dodaciMob" *ngIf="product.mlevenaJunetina>0">Meso: Mlevena junetina</div>
+          <div class="dodaciMob" *ngIf="product.rostiljKobasica>0">Meso: Roštilj kobasica</div>
+          <div class="dodaciMob" *ngIf="product.chickenNugets>0">Meso: Chicken Nuggets</div>
+          <div class="dodaciMob" *ngIf="product.cordonBleu>0">Meso: Cordon bleu</div>
+          <div class="dodaciMob" *ngIf="product.falafel>0">Meso: Falafel</div>
+          <div class="dodaciMob" *ngIf="product.besplatniSos.length>0">Sos: {{product.besplatniSos}}</div>
+          <div class="dodaciMob" *ngIf="product.kecap==true">Extra sos: Kecap(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.majonez==true">Extra sos: Majonez(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.sahara==true">Extra sos: Sahara(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.seville==true">Extra sos: Seville(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.texasBbq==true">Extra sos: Texax Barbecue(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.ninjaBlend==true">Extra sos: Ninja blend(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.kari==true">Extra sos: Kari(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.siracha==true">Extra sos: Siracha(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.barbecue==true">Extra sos: Barbecue(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.tostSir==true">Extra dodatak: Tost sir(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.cedar==true">Extra dodatak: Cedar(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.gauda==true">Extra dodatak: Gauda(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.zdenka==true">Extra dodatak: Zdenka(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.gorgonzola==true">Extra dodatak: Gorgonzola(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.slanina==true">Extra dodatak: Slanina(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.jalapeno==true">Extra dodatak: Jalapeno(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.hrskaviLuk==true">Extra dodatak: Hrskavi luk(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.sampinjoni==true">Extra dodatak: Sampinjoni(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.guacamole==true">Extra dodatak: Guacamole(+80din)</div>
+          <div class="dodaciMob" *ngIf="product.posebanZahtev.length>0">Posebne zahtev: {{product.posebanZahtev}}</div>
+          <div class="dodaciMob">Količina: {{product.count}}</div>
+          <div class="productSubTotalMob">{{product.subTotal}} din</div>
+        </div>
+        <div class="ukupnoMob">Ukupno <span style="color: #ED6F24;">{{ukupno}} din</span></div>
+      </div>
+      <div class="poruciGlavniDivMob">
+        <div class="poruciHeadingDivMob">
+          <div class="poruciHeadingText">Plaćanje dostavljaču</div>
+        </div>
+        <div class="poruciPotvrdaTextMob">Potvrda porudžbine i vreme dostave se šalje putem e-maila.</div>
+        <div class="poruciPotvrdaTextMob"> Cena dostave zavisi
+          od dela grada, i biće naplaćena od strane dostavljača na adresi.</div>
+        <button type="submit" class="poruciDugmeDivMob" [disabled]="!checkoutForm.valid">
+          <div class="poruciDugmeMob">Naručite</div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-bottom: 8rem;">
+      
+  </div>
+</form>
+</div>
+
+
+
+<!-- Mobilni -->
+<div *ngIf="!mobileLayout" class="container mt-4">
+  <div class="header2">
+    <h2>Podaci za dostavu</h2>
+  </div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="checkoutForm">
+    <!-- Pocetak forme za unos podataka -->
+    <div class="mb-3">
+      <label for="kupacIme" class="form-label tekstForma">Ime<span style="color: red;">*</span></label>
+      <input type="text" id="kupacIme" name="kupacIme" class="form-control" required formControlName="kupacIme"
+        [(ngModel)]="porudzbina.kupacIme">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacPrezime" class="form-label tekstForma">Prezime<span style="color: red;">*</span></label>
+      <input type="text" id="kupacPrezime" name="kupacPrezime" class="form-control" required
+        formControlName="kupacPrezime" [(ngModel)]="porudzbina.kupacPrezime">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacUlica" class="form-label tekstForma">Ulica<span style="color: red;">*</span></label>
+      <input type="text" id="kupacUlica" name="kupacUlica" class="form-control" required formControlName="kupacUlica"
+        [(ngModel)]="porudzbina.kupacUlica">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacBroj" class="form-label tekstForma">Broj<span style="color: red;">*</span></label>
+      <input type="text" id="kupacBroj" name="kupacBroj" class="form-control" required formControlName="kupacBroj"
+        [(ngModel)]="porudzbina.kupacBroj">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacInterfon" class="form-label tekstForma">Interfon</label>
+      <input type="text" id="kupacInterfon" name="kupacInterfon" class="form-control" formControlName="kupacInterfon"
+        [(ngModel)]="porudzbina.kupacInterfon">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacBrojStana" class="form-label tekstForma">Broj stana</label>
+      <input type="text" id="kupacBrojStana" name="kupacBrojStana" class="form-control" formControlName="kupacBrojStana"
+        [(ngModel)]="porudzbina.kupacBrojStana">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacSprat" class="form-label tekstForma">Sprat</label>
+      <input type="text" id="kupacSprat" name="kupacSprat" class="form-control" formControlName="kupacSprat"
+        [(ngModel)]="porudzbina.kupacSprat">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacTelefon" class="form-label tekstForma">Telefon<span style="color: red;">*</span></label>
+      <input type="text" id="kupacTelefon" name="kupacTelefon" class="form-control" required
+        formControlName="kupacTelefon" [(ngModel)]="porudzbina.kupacTelefon">
+    </div>
+
+    <div class="mb-3">
+      <label for="kupacEmail" class="form-label tekstForma">Email<span style="color: red;">*</span></label>
+      <input type="email" id="kupacEmail" name="kupacEmail" class="form-control" required formControlName="kupacEmail"
+        [(ngModel)]="porudzbina.kupacEmail">
+    </div>
+
+    <div class="mb-3">
+      <label for="posebanZahtev" class="form-label tekstForma">Posebne napomene za dostavu</label>
+      <input type="text" id="posebanZahtev" name="posebanZahtev" class="form-control" formControlName="posebanZahtev"
+        [(ngModel)]="porudzbina.posebanZahtev">
+    </div>
+    <!-- Kraj forme za podatke -->
+    <!-- Pocetak stvari u porudzbini -->
+    <div class="porudzbinaGlavniDivMob">
+      <div class="vasaPorudzbinaDivMob">
+        <div class="vasaPorudzbinaTextMob">Vaša porudžbina</div>
+      </div>
+      <div class="porudzbinaProductGlavniDivMob" *ngFor="let product of porudzbina.proizvodi">
+        <div class="productImeMob">{{product.productName}}</div>
+        <div class="dodaciMob" *ngIf="product.mariniranaPiletina>0">Meso: Marinirana piletina</div>
+        <div class="dodaciMob" *ngIf="product.mlevenaJunetina>0">Meso: Mlevena junetina</div>
+        <div class="dodaciMob" *ngIf="product.rostiljKobasica>0">Meso: Roštilj kobasica</div>
+        <div class="dodaciMob" *ngIf="product.chickenNugets>0">Meso: Chicken Nuggets</div>
+        <div class="dodaciMob" *ngIf="product.cordonBleu>0">Meso: Cordon bleu</div>
+        <div class="dodaciMob" *ngIf="product.falafel>0">Meso: Falafel</div>
+        <div class="dodaciMob" *ngIf="product.besplatniSos.length>0">Sos: {{product.besplatniSos}}</div>
+        <div class="dodaciMob" *ngIf="product.kecap==true">Extra sos: Kecap(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.majonez==true">Extra sos: Majonez(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.sahara==true">Extra sos: Sahara(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.seville==true">Extra sos: Seville(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.texasBbq==true">Extra sos: Texax Barbecue(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.ninjaBlend==true">Extra sos: Ninja blend(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.kari==true">Extra sos: Kari(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.siracha==true">Extra sos: Siracha(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.barbecue==true">Extra sos: Barbecue(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.tostSir==true">Extra dodatak: Tost sir(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.cedar==true">Extra dodatak: Cedar(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.gauda==true">Extra dodatak: Gauda(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.zdenka==true">Extra dodatak: Zdenka(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.gorgonzola==true">Extra dodatak: Gorgonzola(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.slanina==true">Extra dodatak: Slanina(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.jalapeno==true">Extra dodatak: Jalapeno(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.hrskaviLuk==true">Extra dodatak: Hrskavi luk(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.sampinjoni==true">Extra dodatak: Sampinjoni(+80din)</div>
+        <div class="dodaciMob" *ngIf="product.guacamole==true">Extra dodatak: Guacamole(+80din)</div>
+        <div class="productSubTotalMob">{{product.subTotal}} din</div>
+      </div>
+      <div class="ukupnoMob">Ukupno <span style="color: #ED6F24;">{{ukupno}} din</span></div>
+    </div>
+    <!-- Cena dostave pocetak -->
+    <div class="cenaDostaveGlavniDivMob">
+      <div class="cenaDostaveTextDivMob">
+        <div class="cenaDostaveTextMob">Cena dostave</div>
+        <!-- <div style="width: 100%; height: 0px; border: 1px #575757 dotted"></div> -->
+      </div>
+      <div class="naseljaDivMob">
+        <div class="naseljeImeMob">Podbara</div>
+        <div class="naseljeCenaMob">+300 rsd</div>
+      </div>
+      <div class="naseljaDivMob">
+        <div class="naseljeImeMob">Liman 1,2,3,4</div>
+        <div class="naseljeCenaMob">+300 rsd</div>
+      </div>
+      <div class="naseljaDivMob">
+        <div class="naseljeImeMob">Centar</div>
+        <div class="naseljeCenaMob">+300 rsd</div>
+      </div>
+      <div class="naseljaDivMob">
+        <div class="naseljeImeMob">Stari Grad</div>
+        <div class="naseljeCenaMob">+300 rsd</div>
+      </div>
+    </div>
+    <!-- Cena dostave kraj -->
+    <!-- Poruci pocetak -->
+    <div class="poruciGlavniDivMob">
+      <div class="poruciHeadingDivMob">
+        <div class="poruciHeadingText">Plaćanje dostavljaču</div>
+      </div>
+      <div class="poruciPotvrdaTextMob">Potvrda porudžbine i vreme dostave se šalje putem e-maila.   Cena dostave zavisi
+        od dela grada, i biće naplaćena od strane dostavljača na adresi.</div>
+      <button type="submit" class="poruciDugmeDivMob" [disabled]="!checkoutForm.valid">
+        <div class="poruciDugmeMob">Naručite</div>
+      </button>
+    </div>
+    <!-- Poruci kraj -->
+  </form>
+</div>

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+h2 {
+    font-family: Poppins;
+}
+
+.header2 {
+    border-bottom: 1px dotted black;
+    margin-bottom: 1.25rem;
+}
+
+.tekstForma {
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+input {
+    border-radius: 0.625rem;
+    border: 1px solid var(--Input-stroke, #D7D5D5);
+    background: var(--White, #FFF);
+}
+
+label {
+    padding-left: 1rem;
+}
+
+
+.cenaDostaveGlavniDivMob {
+    width: 100%;
+    padding: 24px; 
+    margin-top: 2%; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 1px #D7D5D5 solid; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 20px; 
+    display: inline-flex;
+}
+
+.cenaDostaveTextDivMob {
+    width: 100%;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 24px; 
+    display: flex; 
+    border-bottom: 1px dotted black;
+}
+
+.cenaDostaveTextMob {
+    text-align: center; 
+    color: #262626; 
+    font-size: 20px; 
+    font-family: Arvo, sans-serif; 
+    font-weight: 700; 
+    line-height: 30px; 
+    word-wrap: break-word;
+}
+
+.naseljaDivMob {
+    align-self: stretch; 
+    justify-content: space-between; 
+    align-items: center; 
+    display: inline-flex;
+}
+
+.naseljeImeMob {
+    color: #262626; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+.naseljeCenaMob {
+    color: #ED6F24; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+}
+
+.poruciGlavniDivMob {
+    width: 100%; 
+    height: auto; 
+    padding: 24px;
+    margin-top: 2%; 
+    background: white; 
+    border-radius: 10px; 
+    border: 1px #D7D5D5 solid; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 20px; 
+    display: inline-flex;
+}
+
+.poruciHeadingDivMob {
+    width: 100%;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    gap: 24px; 
+    display: flex;
+    
+}
+
+.poruciHeadingText {
+    margin-top: 5px;
+    width: 100%;
+    text-align: left; 
+    color: #262626; 
+    font-size: 20px; 
+    font-family: Arvo, sans-serif; 
+    font-weight: 700; 
+    line-height: 30px; 
+    word-wrap: break-word;
+    border-bottom: 1px #575757 dotted;
+}
+
+.poruciPotvrdaTextMob {
+    width: 90%; 
+    color: #575757; 
+    font-size: 16px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 32px; 
+    word-wrap: break-word;
+}
+
+.poruciDugmeDivMob {
+    align-self: stretch; 
+    padding-left: 64px; 
+    padding-right: 64px; 
+    padding-top: 14px; 
+    padding-bottom: 14px; 
+    background: #FFF0E1; 
+    border-radius: 10px; 
+    border: 1px #ED6F24 solid; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.poruciDugmeMob {
+    color: #ED6F24; 
+    font-size: 16px; 
+    font-family: Arvo, sans-serif; 
+    font-weight: 700; 
+    word-wrap: break-word;
+}
+
+/* Dinamcki deo mob */
+.porudzbinaGlavniDivMob {
+    width: 100%; 
+    padding: 24px; 
+    background: white; 
+    border-radius: 10px; 
+    border: 1px #D7D5D5 solid; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 20px; 
+    display: inline-flex;
+}
+
+.vasaPorudzbinaDivMob {
+    width: 100%;
+    border-bottom: 1px dotted black;
+}
+
+.vasaPorudzbinaTextMob {
+    text-align: center; 
+    color: #262626; 
+    font-size: 20px; 
+    font-family: Arvo, sans-serif; 
+    font-weight: 700; 
+    line-height: 30px; 
+    word-wrap: break-word;
+}
+
+.porudzbinaProductGlavniDivMob {
+    width: 100%;
+    border-radius: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px  dotted black;    
+    margin-bottom: 10px;
+}
+
+.productImeMob {
+    color: #262626; 
+    font-size: 1rem; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+}
+
+.productSubTotalMob {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ED6F24; 
+    font-size: 1rem; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    word-wrap: break-word;
+    text-align: right;
+}
+
+.dodaciMob {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-family: Poppins;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.ukupnoMob {
+    color: #262626; 
+    font-size: 1rem; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+}
+
+.poruciDugmeDivMob:hover {
+    background-color: #ED6F24;
+    
+}
+
+.poruciDugmeDivMob:hover .poruciDugmeMob {
+    color: white;
+}
+
+.poruciDugmeDivMob:disabled {
+    background-color: #e6ac8b;
+}

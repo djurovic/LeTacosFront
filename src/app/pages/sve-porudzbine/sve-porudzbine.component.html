@@ -1,0 +1,28 @@
+<h1 align="center" class="display-4 mb-5">Porudzbine</h1>
+  
+<table class="table table-striped text-center">
+  <thead>
+  <tr>
+      <th scope="col">Broj porudzbine #</th>
+      <th scope="col">Vreme porudzbine</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+  </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let order of page?.content">
+        <td>{{ order.porudzbinaId }}</td>
+        <td>{{ order.createTime | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td [ngClass]="{ 'new': OrderStatus[order.orderStatus] === 'Ceka_potvrdu',
+        'finished': OrderStatus[order.orderStatus] === 'Potvrdjeno',
+         'canceled': OrderStatus[order.orderStatus] === 'Odbijeno' }">{{OrderStatus[order.orderStatus]}}</td>
+        <td><a [routerLink]="['/porudzbina', order.porudzbinaId]">Prikazi</a></td>
+      </tr>      
+    </tbody>
+  </table>
+  <app-pagination [currentPage]="page"></app-pagination>
+
+<!-- Proba  -->
+
+<!-- <app-pagination [currentPage]="page"></app-pagination> -->
+<!-- Otkomentarisati kad se doda paginacija -->

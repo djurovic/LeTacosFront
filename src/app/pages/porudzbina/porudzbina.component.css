@@ -1,0 +1,83 @@
+.disabled-link {
+    pointer-events: none;  /* Disable click events */
+    opacity: 0.5;          /* Make it appear visually disabled */
+    text-decoration: none; /* Remove underline or link styling */
+    color: gray;           /* Change the color to indicate disabled state */
+    cursor: not-allowed;   /* Change cursor to not-allowed */
+}
+
+.porudzbinaGlavniDivMob {
+    width: 100%; 
+    padding: 24px; 
+    background: white; 
+    border-radius: 10px; 
+    border: 1px #D7D5D5 solid; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 20px; 
+    display: inline-flex;
+}
+
+.vasaPorudzbinaDivMob {
+    width: 100%;
+    border-bottom: 1px dotted black;
+}
+
+.vasaPorudzbinaTextMob {
+    text-align: center; 
+    color: #262626; 
+    font-size: 20px; 
+    font-family: Arvo, sans-serif; 
+    font-weight: 700; 
+    line-height: 30px; 
+    word-wrap: break-word;
+}
+
+.porudzbinaProductGlavniDivMob {
+    width: 100%;
+    border-radius: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px  dotted black;    
+    margin-bottom: 10px;
+}
+
+.productImeMob {
+    color: #262626; 
+    font-size: 1rem; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+}
+
+.productSubTotalMob {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ED6F24; 
+    font-size: 1rem; 
+    font-family: Arvo; 
+    font-weight: 700; 
+    word-wrap: break-word;
+    text-align: right;
+}
+
+.dodaciMob {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-family: Poppins;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.ukupnoMob {
+    color: #262626; 
+    font-size: 1rem; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 24px; 
+    word-wrap: break-word;
+}
